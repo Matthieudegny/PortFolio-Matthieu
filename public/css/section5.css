@@ -103,18 +103,19 @@
 /*Boutton Send*/
 #contact-container-button{
     height: 10%;
+    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 2%;
+    background-color: rgb(223, 228, 201);
+    border-radius: 5px;
 }
 #contact-send{
-    font-size: 1.8vw;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    height: 100%;
+    width: 100%;
+    font-size: 1.5vw;
     font-weight:900;
-    padding: 4%;
-    border-radius: 5px;
-    background-color: rgb(223, 228, 201);
     color: rgb(8, 8, 8);
     cursor: pointer; 
 }

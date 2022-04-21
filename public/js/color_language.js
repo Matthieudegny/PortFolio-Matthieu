@@ -75,7 +75,7 @@ buttonLanguageMode.addEventListener("click", () => {
         skillsExp.textContent = english.skills.skillsExp
         skillsLanguage.textContent = english.skills.skillsLanguage
         contactH3.textContent = english.contact.contactH3
-        contactSend.textContent = english.contact.contactSend
+        contactSend.value = english.contact.contactSend
         frenchMode = false;
     } else {
         /*je paramètre en français*/
@@ -96,9 +96,9 @@ buttonLanguageMode.addEventListener("click", () => {
         skillsExp.textContent = french.skills.skillsExp
         skillsLanguage.textContent = french.skills.skillsLanguage
         contactH3.textContent = french.contact.contactH3
-        contactSend.textContent = french.contact.contactSend
+        contactSend.value = french.contact.contactSend
         frenchMode = true;
     }
 })
-console.log(frenchMode)
+
 
