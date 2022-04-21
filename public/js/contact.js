@@ -9,20 +9,35 @@ contactForm.addEventListener('submit', (e) => {
         email: email.value,
         message:message.value,
     }
-    let xhr = new XMLHttpRequest();
-    xhr.open('POST', '/');
-    xhr.setRequestHeader('content-type', 'application/json')
-    xhr.onload = function() {
-        console.log(xhr.responseText);
-        if(xhr.responseText == 'success'){
-            alert('Email sent');
-            email.value = '';
-            message.value = '';
 
-        }else{
-            alert('Something went wrong')
-        }
-    }
+    fetch('/', {
+        method:'POST',
+        headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded',
+        },
+    })
+    .then(function(response) {
+        return response.json(formData);
+    }).then(function(jsonData) {
+        console.log(jsonData)
+    }).catch(function(err) {
+        console.log("something wrong", err)
+    })
 
-    xhr.send(JSON.stringify(formData))
+    // let xhr = new XMLHttpRequest();
+    // xhr.open('POST', '/');
+    // xhr.setRequestHeader('content-type', 'application/json')
+    // xhr.onload = function() {
+    //     console.log(xhr.responseText);
+    //     if(xhr.responseText == 'success'){
+    //         alert('Email sent');
+    //         email.value = '';
+    //         message.value = '';
+
+    //     }else{
+    //         alert('Something went wrong')
+    //     }
+    // }
+    // // xhr.send(JSON.stringify(formData))
 })
