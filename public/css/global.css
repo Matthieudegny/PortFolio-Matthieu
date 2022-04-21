@@ -1,0 +1,108 @@
+/*Organisation de la page */
+:root{
+    --main-html-font-family : 'La Belle Aurore', sans-serif;
+    --main-titles-font-family: 'Raleway', sans-serif ;
+    --main-text-font-family: 'Open Sans', sans-serif;
+    --main-mode-backgroundcolor: url(/public/img/logo/backgroundColor/sun.png);
+    --main-mode-language: url(/public/img/logo/language/england.png);
+    --main-bg-color:black;
+    --main-text-color:white;
+    --main-text-html-color: rgb(120, 113, 113);
+    --main-text-shadow: 0px 0px 15px white;
+    --main-containors: rgb(40, 40, 38);
+    --main-containors-footer:rgb(11, 11, 11);
+    
+}
+html{
+    font-size: 1em;
+    font-family: var(--main-text-font-family);
+}
+html a{
+    color: var(--main-text-color);
+}
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+/*toutes les sections feront au min 100vh,pf->différent*/
+section{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*tous les titres*/
+h2{
+    font-family:var(--main-titles-font-family);
+    font-size: 3vw;
+    letter-spacing: 10px;
+    margin-left: 150px; 
+    padding-top: 100px;
+}
+h3{
+    font-family:var(--main-titles-font-family);
+    font-size: 1.7vw;
+    letter-spacing: 5px;
+    padding-bottom: 10px;
+    text-align: center;
+    transition: 1s;
+}
+
+
+/*Rappel ordre 1section(width100%) -> pour 1 main(80%width) -> pour deux containeurs (40%width)*/
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    height: 95%;
+    margin: 0px auto ;
+}
+.container{
+    width: 40%;
+    height: 80%;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    opacity: 0;
+}
+/*pour tous les containeurs de gauche avec introduction animation par la gauche*/
+.left-move{
+   animation: changeleft 1.2s forwards;
+}
+@keyframes changeleft {
+    from{transform: translateX(-200px);
+    opacity: 0.25;}
+    to{transform: translateX(0px);
+    opacity: 1;}
+}
+/*pour tous les containeurs de droite avec introduction animation par la droite*/
+.right-move{
+    animation: changeright 1.2s forwards;
+    opacity: 1;  
+ }
+ @keyframes changeright {
+     from{transform: translateX(200px);
+        opacity: 0.25;}
+     to{transform: translateX(0px);
+        opacity: 1;}
+ }
+
+
+@media screen and (max-width: 1320px) {
+    h2{
+        text-align: center;
+        margin-left: 0px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    h2{
+        padding-top: 70px;
+    }
+}

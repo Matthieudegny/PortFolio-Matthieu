@@ -1,0 +1,327 @@
+/*Section home*//**************************/
+#home{
+    /*pour marge style écriture html*/
+    padding-left: 125px;
+    background-image: url(/public/img/home.jpg);
+    background-position: center;
+    background-size: cover; 
+    background-attachment: fixed;
+}
+
+
+.container-home{
+    margin:0px 10%;
+}
+.home-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-family: var(--main-titles-font-family);
+    font-size: 2vw;
+    letter-spacing: 10px;
+    padding-left: 140px; 
+    
+}
+.h1 strong{
+    font-weight: bolder;
+    font-size: 2.4vw;
+}
+.h1{
+    position: relative;
+    overflow: hidden;
+    color: transparent;
+    min-height: 87.5px;
+    animation: txt-appearance 1s 1.5s forwards;
+}
+@keyframes txt-appearance {
+    100% {
+        color: aliceblue;
+        text-shadow: 0px 0px 15px aliceblue ;
+    }
+}
+.h1::after{
+    position: absolute;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-101%);
+    background-image: linear-gradient(250deg,
+    hsl(0deg 0% 0%) 0%,
+    hsl(60deg 3% 5%) 19%,
+    hsl(60deg 3% 8%) 31%,
+    hsl(60deg 3% 9%) 40%,
+    hsl(60deg 3% 11%) 47%,
+    hsl(60deg 3% 12%) 53%,
+    hsl(60deg 3% 13%) 58%,
+    hsl(60deg 3% 15%) 62%,
+    hsl(60deg 2% 16%) 66%,
+    hsl(60deg 1% 18%) 70%,
+    hsl(60deg 1% 20%) 73%,
+    hsl(60deg 1% 21%) 77%,
+    hsl(60deg 0% 22%) 80%,
+    hsl(60deg 0% 24%) 85%,
+    hsl(0deg 0% 25%) 95%
+);
+    animation: slide-in 0.75s 1s ease-out forwards,
+    slide-out 0.75s 2s ease-out forwards;
+}
+@keyframes slide-in {
+    100% {
+        transform: translateX(0%);
+    }
+}
+@keyframes slide-out {
+    100% {
+        transform: translateX(100%)
+    }
+}
+#h1-first{
+    width: 25%;
+}
+#h1-second{
+    width: 50%;
+}
+#h1-third{
+    width: 75%;
+}
+#h1-fourth{
+    width: 100%;
+}
+
+/*lignes type html*/
+.home-html{
+    font-size: 1.5vw;
+    font-family: var(--main-html-font-family);
+    color: var(--main-text-html-color);
+    padding: 45px 0px;
+}
+.home-html-body{
+    font-size: 1.5vw;
+    font-family: var(--main-html-font-family);
+    color: var(--main-text-html-color);
+    padding: 0px 45px ;
+}
+.home-html-h1{
+    font-size: 1.5vw;
+    font-family: var(--main-html-font-family);
+    color: var(--main-text-html-color);
+    padding: 45px 105px;
+}
+
+/*section About*//******************************/
+/*About LeftPart Premier containeur*/
+#about .main{
+    flex-direction: row;
+    align-items: center;
+}
+.about-container-main{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.container-picture{
+    background: url(/public/img/about.jpg)  no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    height: 55%;
+    width: 30%;
+    opacity: 0;
+    transition: 1s all;
+    margin-top: 3%;
+}
+.container-picture:hover{
+    height: 90%;
+}
+.container-text{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.html-about{
+    color: var(--main-text-html-color);
+    font-family: var(--main-html-font-family);
+}
+.about-text{ 
+    width: 90%;
+    font-size: 1.6vw;
+    line-height: 45px;
+    margin-left: 6%;
+    text-align: justify;
+    opacity: 0;
+    margin-bottom: 8%;
+}
+.about-text strong{
+    font-weight: bolder;
+    font-size: 1.8vw;
+    transition: 0.5s;
+    text-shadow: 1px 1px 2px black;
+}
+
+/*about section links + animations*/
+.about-link{
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    margin-bottom: 3%;
+    opacity: 0; 
+}
+.about-link-a{
+    margin: 0px 3%;
+    padding: 1% 3%;
+    font-size: 2.5vw;
+    position: relative;
+    text-align: center;
+    line-height: 70px;     
+}
+.about-link-a span{
+    position: relative;
+    z-index: 2;
+}
+.about-link-a:after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #1f2755;
+    border-radius: 5px;
+    transition: all .35s;
+}
+.about-link-a:hover{
+    transition: all 1s;
+    color: #fff;
+    text-decoration: none;
+}
+  
+.about-link-a:hover:after{
+    width: 100%;
+}
+
+/*animation à l'intersection*/
+@keyframes fromtop {
+    from{
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+  
+@media screen and (max-width: 1620px){
+    /* section1 */
+    .home-html{
+        padding-top: 0px;
+    }
+}
+@media screen and (max-width: 1520px ){
+    /*section 1*/
+    #home{
+        padding: 40px;  
+    }
+    .home-main{
+        max-width: 97%;
+    }
+    .home-html-h1{
+        padding: 45px 65px ;
+    }
+}
+@media screen and (max-width: 1320px){
+    /*section 2*/
+    .about-container-main{
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-picture{
+        width: 35%;
+        margin: 5%;
+    }
+    .about-text{
+        width: 100%;
+        margin-left: 0px;
+    }
+    .about-link{
+        justify-content: center;
+    }
+
+}
+@media screen and (max-width: 1250px){
+    /*section1*/
+    .container-home{
+        margin-right: 0px;
+    }
+    .home-title{
+        min-height: 50px;
+    }
+    .h1{
+        margin: 20px 0px;
+    } 
+}
+
+
+@media screen and (max-width: 1100px){
+    /*section1*/
+    .container-home{
+       padding-bottom: 20%;
+    }
+    .home-main{
+        padding-left: 70px;
+    }
+    /*section2*/
+    .container-picture{
+        width: 50%;
+    }
+    .container-text{
+        width: 90%;
+    }
+}
+@media  screen and (max-width: 900px){
+    /*section 1*/
+    .container-home{
+        width: 100%;
+        margin: 0;
+     }
+    #home{
+        padding: 15px; 
+    }
+    .h1{
+        width: 95%;
+        line-height: 60px;  
+    }
+     /*section2*/
+     .container-picture{
+       height: 55%;
+    }
+
+  
+}
+@media  screen and (max-width: 700px){
+    /*section 1*/
+    .home-html-body{
+        padding: 0px 10px;
+    }
+    .home-html-h1{
+        padding: 45px 15px;
+    }
+    .home-main{
+        padding-left: 20px;
+    }
+    .home-title{
+        min-width: 95%;
+        font-size: 1.5vw;
+    }
+    /*section2*/
+    #about main{
+        box-sizing: content-box;
+        padding: 10% 0px;
+       
+     }
+}

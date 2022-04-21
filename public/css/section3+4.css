@@ -1,0 +1,293 @@
+/*Section Skil*//************************************/
+.container-skills {
+    display: grid; 
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 1%;
+    height: 70vh;
+    width: 80vw;
+    font-size: 2vw;
+ }
+ .skills-header{
+    margin-bottom: 2%;
+    position: relative;
+    text-decoration: underline;
+}
+   
+ #skills-front {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-column-end: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 2%; 
+ }
+ .front-items{
+     display: flex;
+     flex-wrap: wrap;
+ }
+ .item-front{
+     margin-right:20px;
+     opacity: 0;
+ }
+ @keyframes frontItems {
+     from {
+        transform: translateY(60px);
+        opacity: 0;
+    }to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+ }
+ #item-1 {
+    grid-row-start: 1;
+    grid-column-start: 3;
+    grid-row-end: 3;
+    grid-column-end: 6;
+    background-image: url(/public/img/skills_1.jpg); 
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat; 
+    margin-left: 15%;
+    border-radius: 10px;  
+ }
+ #skills-back {
+    grid-row-start: 1;
+    grid-column-start: 6;
+    grid-row-end: 3;
+    grid-column-end: 8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:flex-end;
+    text-align: right;
+ }
+ .item-back{
+    margin-bottom: 8%;
+    opacity: 0;
+}
+@keyframes backItems{
+    from {
+        transform: translatex(60px);
+        opacity: 0;
+    }to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+ #item-3 {
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-row-end: 5;
+    grid-column-end: 3;
+    background-image: url(/public/img/skills_2.jpg); 
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border-radius: 20px;  
+ }
+ #additional-skills {
+    grid-row-start: 3;
+    grid-column-start: 3;
+    grid-row-end: 5;
+    grid-column-end: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    opacity: 0; 
+ }
+ @keyframes additionalItems {
+     from{opacity: 0;}
+     to{opacity: 1;}
+ }
+ .container-additional-items{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     flex-wrap: wrap;
+     margin-right: 5%;
+ }
+ .item-addit{
+   
+     margin: 15px 15px ;
+ }
+
+
+/*Section PF*//*************************************************/
+#pf{
+    height: 200vh;
+    margin-bottom: 100px;
+}
+/*hauteur plus grande sur cette section due aux deux containeurs qui
+sont wrappés*/
+#pf .main{
+    height: 100%;
+}
+#pf h2{
+    padding-bottom: 50px;
+}
+.card-containor{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 150px;
+    height: 40%;
+    width: 75%;
+    overflow: hidden;
+    transition: 1s;
+}
+/*décalage des deux containeurs pour effet quinconce*/
+.card-containor:first-child{
+    margin-left: -20%;
+    display: flex;
+    align-items: flex-start;
+}
+.card-containor:nth-child(2){
+    margin-right: -20%;
+    display: flex;
+    align-items: flex-end;
+}
+/*création du voile sur les containeurs
+disparaissant à l'intersection de la vue*/
+.card-containor-after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.95;
+    background-image: linear-gradient(
+  45deg,
+  hsl(0deg 0% 0%) 5%,
+  hsl(61deg 4% 10%) 40%,
+  hsl(60deg 3% 18%) 54%,
+  hsl(60deg 2% 26%) 65%,
+  hsl(60deg 1% 35%) 73%,
+  hsl(60deg 1% 44%) 80%,
+  hsl(60deg 1% 53%) 86%,
+  hsl(60deg 2% 63%) 91%,
+  hsl(60deg 2% 73%) 96%,
+  hsl(60deg 4% 84%) 100%
+); 
+}
+.card-animation{
+    animation: slide-out 1.2s ease-out forwards;
+}
+@keyframes slide-out {
+    100% {
+        transform: translateX(101%)
+    }
+}
+/*partie header des containeurs*/
+.card-containor h3{
+    height: 15%;
+}
+/*partie image des containeurs*/
+.card{
+    width: 100%;
+    height: 100%;
+    background-position: center; 
+    background-repeat: no-repeat;
+    border-radius: 25px; 
+}
+.card-one{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNXWu0RFwmMSv_OVhuOjz12QN4XBOF0_EFg&usqp=CAU);
+    background-size: cover;
+}
+.card-two{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNXWu0RFwmMSv_OVhuOjz12QN4XBOF0_EFg&usqp=CAU);
+    background-size: cover;
+}
+/*partie footer des containeurs*/
+.card-footer{
+    height: 15%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    font-size: 1.4vw;
+}
+.footer-box{
+    text-decoration: none;
+    cursor: pointer;
+}
+.card-image-after{
+    position: absolute;
+    content: "";
+    top:12.5%;
+    height: 0%;
+    width: 100%;
+    border-radius: 25px;
+    background-color: rgb(140, 146, 146);
+    opacity: 0;
+    z-index: -1;
+    transition: 0.3s;
+}
+.card-image-after p{
+    transition: 0.3s;
+    margin: 6% 8%;
+    font-size: 1.8vw;
+    line-height: 45px;
+    color: var(--main-text-color);
+    text-shadow: var(--main-text-shadow);
+}
+.details-hover{
+    transition: 1s;
+    height: 76.5%;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+
+@media screen and (max-width: 1520px){
+    /*section 3*/
+    .skills{
+        height: 60%;
+    }
+    .skill-item{
+        margin: 0px;
+    }
+    .skills-logo{
+        width: 40px;
+        height: 40px;
+    }
+}
+@media screen and (max-width: 1320px){
+    /*section 3*/
+   #item-1{
+       width: 110%;
+   }
+   #additional-skills{
+       margin-left: 12%;
+   }
+   #item-3{
+       width: 130%; 
+   }
+}
+@media  screen and (max-width: 700px){
+    /*section3*/
+    #skills main{
+        box-sizing: content-box;
+        padding: 10% 0px;
+    }
+    .container-skills{
+        height: 60vh;
+    }
+    .item-front{
+       margin-top: 15px;
+    }
+    .item-back{
+        margin-top: 15px;
+    }
+
+}
+
+
+/* <a href='https://fr.freepik.com/photos/fond'>Fond photo créé par pvproductions - fr.freepik.com</a> */

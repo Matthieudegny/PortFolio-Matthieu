@@ -1,0 +1,31 @@
+const french = {
+    "home": {
+        "Home" : "Accueil",
+        "About" : "A mon propos",
+        "Skills" : "Compétences",
+        "Pf" : "Portefolio",
+        "Contact" : "contact",
+        "First" : "Hi,",
+        "Second" : "Je suis Matthieu,",
+        "Third" : "développeur front-end,",
+        "Fourth": "spécialisé en <strong>Javscript</strong> et <strong>React</strong>.",
+        "HomeJs": "Javascript",
+        "HomeReact": "React"
+    },
+    "about": {
+        "aboutH2" : "A mon propos:",
+        "aboutP" :  "Je suis un développeur de 33 ans aprés avoir passé 6 mois en auto-didacte à apprendre le code, j'ai décidé de passer une formation de 6 mois spécialisé dans la techonolgie <strong>JavaScript</strong>  et le framework <strong>React</strong>.Je souhaite aujourd'hui intégrer une société pour continuer à évoluer et m'épanouir dans le développement web.</br>",
+        "aboutCv" : "Mon CV"
+    },
+    "skills":{
+        "skillsH2":"Mes compétences:",
+        "skillsExp" : "1an d'expérience",
+        "skillsLanguage" : "English speaking"
+    },
+    "portefolio":{
+    },
+    "contact":{
+        "contactH3":"Construisons ensemble",
+        "contactSend":"Envoyer"
+    }       
+}

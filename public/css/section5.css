@@ -1,0 +1,150 @@
+/*Section Formulaire*/  /***************************************/
+#contact{
+    margin-top: 0px;
+    height: 100vh;
+}
+
+#contact main{
+    margin: 50px auto;
+    height: 70vh;  
+}
+.contact-containor{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-image: url(/public/img/contact.jpg);
+    /* <a href="https://fr.freepik.com/photos/affaires"> */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+}
+/*liens coté en absolu pour réseaux sociaux*/
+.contact-social-network{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  left: -2.5%;  
+  bottom: 40%;
+  max-width: 7%;
+  
+}
+.contact-social-network img{
+    width: 3vw;
+    height: 3vw; 
+    background-color: aliceblue;
+    padding: 5px 11px;  
+    border-radius: 5px;
+    margin: 6% 0px; 
+}
+
+.contact-main-box{
+    height: 100%;
+    width: 100%;
+    display: flex;
+}
+/*Partie Gauche avec le titre */
+.left-contact{
+    padding-top: 4.5%;
+    width: 35%;
+    height: 100%;  
+}
+#contact-h3{
+    color: rgb(255, 255, 255);
+    text-shadow: 0px -0px 10px rgba(3, 3, 3, 0.99);
+    font-weight: bolder;
+    margin: auto;
+    padding: 2%;
+    padding-top: 7%;
+    
+}
+
+/*partie de droite avec les deux box de remplissage de texte pour email*/
+.right-contact{
+   
+    width: 65%;  
+    height: 100%;
+}
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.contact-email{
+    height: 5%;
+    width: 80%;
+    font-size: 1.2vw;
+    background-color: rgba(226, 227, 220, 0.826);
+    margin-top:6%;; 
+    margin-bottom: 1%;
+    padding: 3.8%;
+    border-radius: 10px;
+    opacity: 0.85;
+    border: none;
+    color: black;
+    font-weight: bolder;
+}
+.contact-text{
+    height: 40%;
+    width: 80%;
+    font-size: 1.2vw;
+    background-color: rgba(226, 227, 220, 0.826);
+    padding: 3.8%;
+    margin-bottom: 0;
+    border-radius: 10px;
+    border: none;
+    opacity: 0.85;
+    color: black;
+    font-weight: bolder;
+}
+/*Boutton Send*/
+#contact-container-button{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2%;
+}
+#contact-send{
+    font-size: 1.8vw;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight:900;
+    padding: 4%;
+    border-radius: 5px;
+    background-color: rgb(223, 228, 201);
+    color: rgb(8, 8, 8);
+    cursor: pointer; 
+}
+ 
+@media screen and (max-width: 1100px){
+    .contact-social-network{
+        left: -3.5%;
+    }
+}
+@media  screen and (max-width: 900px){
+    .contact-main-box{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .left-contact{
+        height: 10%;
+    }
+    #contact-h3{
+        margin-top: -0px;
+    }
+    .right-contact{
+        height: 80%;
+        width: 80%;
+    }
+    .contact-social-network{
+        bottom:45%;
+    }
+    .contact-social-network{
+        left: -4.25%;
+    }
+}
