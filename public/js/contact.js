@@ -21,9 +21,13 @@ contactForm.addEventListener('submit', (e) => {
         return response.json(formData);
     }).then(function(jsonData) {
         console.log(jsonData)
+       
     }).catch(function(err) {
         console.log("something wrong", err)
     })
+
+    email.value = '';
+    message.value = '';
 
     // let xhr = new XMLHttpRequest();
     // xhr.open('POST', '/');

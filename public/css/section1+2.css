@@ -2,7 +2,7 @@
 #home{
     /*pour marge style écriture html*/
     padding-left: 125px;
-    background-image: url(/public/img/home.jpg);
+    background-image: url(/img/home.jpg);
     background-position: center;
     background-size: cover; 
     background-attachment: fixed;
@@ -124,7 +124,7 @@
     height: 100%;
 }
 .container-picture{
-    background: url(/public/img/about.jpg)  no-repeat;
+    background: url(/img/about.jpg)  no-repeat;
     background-size: cover;
     background-position: center;
     border-radius: 5px;

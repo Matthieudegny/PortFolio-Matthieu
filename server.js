@@ -10,7 +10,7 @@ app.use(express.static('public'));
 app.use(express.json())
 
 app.get('/', (req,res) => {
-    res.sendFile(__dirname + "/public/pf.html")
+    res.sendFile(__dirname + "/pf.html")
 })
 
 app.post('/', (req,res) => {
@@ -25,11 +25,11 @@ app.post('/', (req,res) => {
    })
 
    const mailOptions = {
-       from:req.body.email,
+       from: req.body.name,
        to:'testyoda29000@gmail.com',
-       subject: "Message title",
-       text:req.body.message,
-       html: req.body.message
+       subject: req.body.name,
+       text:req.body.texte,
+       html: req.body.texte
    }
 
    transporter.sendMail(mailOptions,(error, info)=>{

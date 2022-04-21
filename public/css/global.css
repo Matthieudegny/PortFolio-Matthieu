@@ -3,8 +3,8 @@
     --main-html-font-family : 'La Belle Aurore', sans-serif;
     --main-titles-font-family: 'Raleway', sans-serif ;
     --main-text-font-family: 'Open Sans', sans-serif;
-    --main-mode-backgroundcolor: url(/public/img/logo/backgroundColor/sun.png);
-    --main-mode-language: url(/public/img/logo/language/england.png);
+    --main-mode-backgroundcolor: url(/img/logo/backgroundColor/sun.png);
+    --main-mode-language: url(/img/logo/language/england.png);
     --main-bg-color:black;
     --main-text-color:white;
     --main-text-html-color: rgb(120, 113, 113);

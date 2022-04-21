@@ -6,7 +6,7 @@ let darkMode = true;
 si le darkMode est activé, et inversement*/
 buttonModeBackgroundColor.addEventListener("click", () => {
     if(!darkMode){
-        document.documentElement.style.setProperty('--main-mode-backgroundcolor', "url(/public/img/logo/backgroundColor/sun.png)")
+        document.documentElement.style.setProperty('--main-mode-backgroundcolor', "url(/img/logo/backgroundColor/sun.png)")
         document.documentElement.style.setProperty('--main-bg-color', "black")
         document.documentElement.style.setProperty('--main-text-shadow', "0px 0px 15px white")
         document.documentElement.style.setProperty('--main-text-color', "white")
@@ -14,7 +14,7 @@ buttonModeBackgroundColor.addEventListener("click", () => {
         document.documentElement.style.setProperty('--main-containors-footer', "rgb(11, 11, 11)")
         darkMode = true;
     }else{
-        document.documentElement.style.setProperty('--main-mode-backgroundcolor', "url(/public/img/logo/backgroundColor/moon.png)")
+        document.documentElement.style.setProperty('--main-mode-backgroundcolor', "url(/img/logo/backgroundColor/moon.png)")
         document.documentElement.style.setProperty('--main-bg-color', "white")
         document.documentElement.style.setProperty('--main-text-shadow', "0px 0px 15px black")
         document.documentElement.style.setProperty('--main-text-color', "black")
@@ -58,7 +58,7 @@ buttonLanguageMode.addEventListener("click", () => {
     
     if (frenchMode){
         /*je paramètre en anglais*/
-        document.documentElement.style.setProperty('--main-mode-language', 'url(/public/img/logo/language/france.png)')
+        document.documentElement.style.setProperty('--main-mode-language', 'url(/img/logo/language/france.png)')
         homeLinkHome.textContent = english.home.Home
         homeLinkAbout.textContent = english.home.About
         homeLinkSkills.textContent = english.home.Skills
@@ -79,7 +79,7 @@ buttonLanguageMode.addEventListener("click", () => {
         frenchMode = false;
     } else {
         /*je paramètre en français*/
-        document.documentElement.style.setProperty('--main-mode-language', 'url(/public/img/logo/language/england.png)')
+        document.documentElement.style.setProperty('--main-mode-language', 'url(/img/logo/language/england.png)')
         homeLinkHome.textContent = french.home.Home
         homeLinkAbout.textContent = french.home.About
         homeLinkSkills.textContent = french.home.Skills
