@@ -22,6 +22,7 @@ let optionsSections = {
   observerSectionAboutImage.observe(aboutText)
   
   /*Section Skills*/
+  /*apparition des items avec object intersection*/
   const targetSkills = document.getElementById("skills-front")
   const frontItems = document.querySelectorAll(".item-front")
   const backItems = document.querySelectorAll(".item-back")
@@ -45,6 +46,27 @@ let optionsSections = {
   
   const observerSectionSkills = new IntersectionObserver(handleIntersectSkills, optionsSections)
   observerSectionSkills.observe(targetSkills)
+  /*animation des cartes
+  le selecteur par carte est privilégié à un selecteur class car cela crée
+  des lags au niveau de l'animation qd la souris bouge*/
+  const cardOne = document.querySelector("#card-one")
+  const cardTwo = document.querySelector("#card-two")
+
+  cardOne.addEventListener("mouseover", (e) => {
+    document.getElementById("skill-card-one-back").style.transform ="scaleY(1)";
+  })
+  cardOne.addEventListener("mouseout", (e) => {
+    document.getElementById("skill-card-one-back").style.transform ="scaleY(0)";
+  })
+  cardTwo.addEventListener("mouseover", (e) => {
+    document.getElementById("skill-card-two-back").style.transform ="scaleY(1)";
+  })
+  cardTwo.addEventListener("mouseout", (e) => {
+    document.getElementById("skill-card-two-back").style.transform ="scaleY(0)";
+  })
+
+
+ 
   
   /*Section PF*/
   /*Intersection Obs Paramétrage du voile sur les containeurs du PF*/

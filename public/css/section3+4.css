@@ -41,18 +41,76 @@
         opacity: 1;
     }
  }
- #item-1 {
+ .cards-skills{
+    transition: all 0.5s ease;
+ }
+ /*carte1*/
+#card-one{
+    position: relative;
     grid-row-start: 1;
     grid-column-start: 3;
     grid-row-end: 3;
     grid-column-end: 6;
+    height: 100%;
+    width: 100%;
+ }
+ #skill-card-one-front{
+    width: 100%;
+    height: 100%;
     background-image: url(/img/skills_1.jpg); 
-    background-position: center;
+    background-position:center;
     background-size: 100%;
     background-repeat: no-repeat; 
+    margin-left: 20%;  
+}
+ #skill-card-one-back{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%; 
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    transition: 0.6s;
     margin-left: 15%;
-    border-radius: 10px;  
+    border-radius: 5px; 
+    transform: scaleY(0); 
  }
+ /*carte2*/
+ #card-two {
+    position: relative;
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-row-end: 5;
+    grid-column-end: 3;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;  
+ }
+ #skill-card-two-front{
+    background-image: url(/img/skills_2.jpg); 
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+ }
+
+ #skill-card-two-back{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 85%; 
+    bottom: 7.5%;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    transition: 0.6s;
+    border-radius: 10px; 
+    transform: scaleY(0); 
+ }
+
  #skills-back {
     grid-row-start: 1;
     grid-column-start: 6;
@@ -77,17 +135,7 @@
         opacity: 1;
     }
 }
- #item-3 {
-    grid-row-start: 3;
-    grid-column-start: 1;
-    grid-row-end: 5;
-    grid-column-end: 3;
-    background-image: url(/img/skills_2.jpg); 
-    background-position: center;
-    background-size: 100%;
-    background-repeat: no-repeat;
-    border-radius: 20px;  
- }
+
  #additional-skills {
     grid-row-start: 3;
     grid-column-start: 3;
