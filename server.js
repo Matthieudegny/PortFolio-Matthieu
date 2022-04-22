@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 require('dotenv').config();
 const nodemailer = require("nodemailer");
+const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
@@ -10,25 +11,25 @@ app.get('/', (req,res) =>{
     res.sendFile(__dirname + '/public/pf.html')
 });
 
-const PORT = process.env.PORT || 3000;
-
 app.post('/', (req,res) => {
 
-    console.log(req.body)
+    const { email,message } = req.body;  
+
     const transporter = nodemailer.createTransport({
         service:'gmail',
         auth:{
-            user:'testyoda29000@gmail.com',
-            pass: "password01!"
+            user: process.env.GMAIL_USER,
+            pass: process.env.PASSWORD,
         }
     })
     
     const mailOptions = {
-        from:req.body.name,
-        to:'testyoda29000@gmail.com',
-        subject: req.body.name,
-        text:req.body.texte,
-        html:req.body.texte
+        from: email,
+        to: process.env.GMAIL_USER,
+        subject: "email from my Portfolio",
+        html: `You got a message from 
+        Email : ${email} <br>
+        Message: ${message}`,
     }
     
     transporter.sendMail(mailOptions,(error, info)=>{
@@ -39,8 +40,7 @@ app.post('/', (req,res) => {
          console.log('Email sent:' + info.response);
          
      }
-    })
-    
+    })    
 
 })
 
