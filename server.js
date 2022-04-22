@@ -36,9 +36,9 @@ app.post('/', (req,res) => {
      if(error){
          console.log(error);
          res.send("error");
+         res.sendFile(__dirname + '/public/pf.html')
      }else{
-         console.log('Email sent:' + info.response);
-         
+         console.log('Email sent:' + info.response);       
      }
     })    
 
