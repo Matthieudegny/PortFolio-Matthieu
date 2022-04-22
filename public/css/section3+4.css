@@ -96,7 +96,6 @@
     height: 100%;
     width: 100%;
  }
-
  #skill-card-two-back{
     position: absolute;
     color: rgb(255, 255, 255);
@@ -110,7 +109,7 @@
     border-radius: 10px; 
     transform: scaleY(0); 
  }
-
+/*container back-end*/
  #skills-back {
     grid-row-start: 1;
     grid-column-start: 6;
@@ -248,11 +247,31 @@ disparaissant à l'intersection de la vue*/
 .card-one{
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNXWu0RFwmMSv_OVhuOjz12QN4XBOF0_EFg&usqp=CAU);
     background-size: cover;
+    position: relative;
 }
 .card-two{
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNXWu0RFwmMSv_OVhuOjz12QN4XBOF0_EFg&usqp=CAU);
     background-size: cover;
 }
+/*partie hover carte déclenché par details*/
+.card-image-after-p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 90%;
+    font-size: 1.8vw;
+    line-height: 45px;
+    color: var(--main-text-color);
+    text-shadow: var(--main-text-shadow);
+    margin: 0 auto;
+}
+.details-hover{
+    transition: 1s;
+    height: 100%;
+    opacity: 0.8;
+}
+
 /*partie footer des containeurs*/
 .card-footer{
     height: 15%;
@@ -268,29 +287,13 @@ disparaissant à l'intersection de la vue*/
 }
 .card-image-after{
     position: absolute;
-    content: "";
-    top:12.5%;
+    top:0px;
     height: 0%;
     width: 100%;
     border-radius: 25px;
     background-color: rgb(140, 146, 146);
     opacity: 0;
-    z-index: -1;
-    transition: 0.3s;
-}
-.card-image-after p{
-    transition: 0.3s;
-    margin: 6% 8%;
-    font-size: 1.8vw;
-    line-height: 45px;
-    color: var(--main-text-color);
-    text-shadow: var(--main-text-shadow);
-}
-.details-hover{
-    transition: 1s;
-    height: 76.5%;
-    opacity: 0.8;
-    z-index: 1;
+    transition: 0.3s; 
 }
 
 

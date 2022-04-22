@@ -85,13 +85,13 @@ let optionsSections = {
   const detailsboxes = document.querySelectorAll(".details")
   
   for(let boxe of detailsboxes){
+
      boxe.addEventListener("mouseover", (e) => {
-       
-        let element = e.target.nextSibling.nextSibling;
+      const element = e.target.parentElement.previousSibling.previousSibling.firstChild.nextSibling
         element.classList.toggle("details-hover");
      });
      boxe.addEventListener("mouseout", (e) => {
-        let element = e.target.nextSibling.nextSibling;
+      const element = e.target.parentElement.previousSibling.previousSibling.firstChild.nextSibling
         element.classList.toggle("details-hover");
      });
   }
