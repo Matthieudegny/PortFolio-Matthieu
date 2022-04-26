@@ -1,3 +1,45 @@
+const sections = {
+
+  cards : {
+    cardOne : document.querySelector("#card-one"),
+    cardTwo : document.querySelector("#card-two"),
+    cardOneBack : document.getElementById("skill-card-one-back"),
+    cardTwoBack: document.getElementById("skill-card-two-back")
+  },
+
+  initListeners : {
+
+  },
+
+  actionsListener : {
+    increaseDivCardOneBack: function () {sections.cards.cardOneBack.style.transform ="scaleY(1)"},
+    decreaseDivCardOneBack: function () {sections.cards.cardOneBack.style.transform ="scaleY(0)"},
+    increaseDivCardTwoBack: function () {sections.cards.cardTwoBack.style.transform ="scaleY(1)"},
+    decreaseDivCardTwoBack: function () {sections.cards.cardTwoBack.style.transform ="scaleY(0)"}
+  }
+}
+
+
+
+  /*animation des cartes
+  le selecteur par carte est privilégié à un selecteur class car cela crée
+  des lags au niveau de l'animation qd la souris bouge*/
+ 
+
+  // cardOne.addEventListener("mouseover", (e) => {
+  //   document.getElementById("skill-card-one-back").style.transform ="scaleY(1)";
+  // })
+  // cardOne.addEventListener("mouseout", (e) => {
+  //   document.getElementById("skill-card-one-back").style.transform ="scaleY(0)";
+  // })
+  // cardTwo.addEventListener("mouseover", (e) => {
+  //   document.getElementById("skill-card-two-back").style.transform ="scaleY(1)";
+  // })
+  // cardTwo.addEventListener("mouseout", (e) => {
+  //   document.getElementById("skill-card-two-back").style.transform ="scaleY(0)";
+  // })
+
+
 /*intersection Observer*/
 let optionsSections = {
     threshold: 0.75
@@ -46,26 +88,6 @@ let optionsSections = {
   
   const observerSectionSkills = new IntersectionObserver(handleIntersectSkills, optionsSections)
   observerSectionSkills.observe(targetSkills)
-  /*animation des cartes
-  le selecteur par carte est privilégié à un selecteur class car cela crée
-  des lags au niveau de l'animation qd la souris bouge*/
-  const cardOne = document.querySelector("#card-one")
-  const cardTwo = document.querySelector("#card-two")
-
-  cardOne.addEventListener("mouseover", (e) => {
-    document.getElementById("skill-card-one-back").style.transform ="scaleY(1)";
-  })
-  cardOne.addEventListener("mouseout", (e) => {
-    document.getElementById("skill-card-one-back").style.transform ="scaleY(0)";
-  })
-  cardTwo.addEventListener("mouseover", (e) => {
-    document.getElementById("skill-card-two-back").style.transform ="scaleY(1)";
-  })
-  cardTwo.addEventListener("mouseout", (e) => {
-    document.getElementById("skill-card-two-back").style.transform ="scaleY(0)";
-  })
-
-
  
   
   /*Section PF*/

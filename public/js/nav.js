@@ -1,5 +1,10 @@
 const nav = {
 
+    init:function(){
+      nav.Listeners();
+      nav.Observers();
+    },
+
     objectsNavbar :{
       button : document.querySelector(".menu-nav-button"),
       cross : document.getElementById("logo-cross"),
@@ -22,7 +27,7 @@ const nav = {
       sectionFive : document.getElementById("contact")
     },
 
-    initListeners: function() {
+    Listeners: function() {
       nav.objectsNavbar.button.addEventListener("click", nav.actionListener.animationNavBar)
     },
 
@@ -37,7 +42,7 @@ const nav = {
     },
 
     /*the goal is to make animated the navbar, depending on where is the user*/
-    initObservers:function () {
+    Observers:function () {
       /*creation of a new instance of the Class IntersectionObserver(connected with a method handleIntersectionOne, and the setting optionsLink)*/
       const observerSectionOne = new IntersectionObserver(nav.actionsObserver.handleIntersectsectionOne, nav.optionObserver.optionsLink);
       /*the new obsever is set on sectionOne*/
@@ -97,7 +102,7 @@ const nav = {
     },
 }
 // when the loading is finish i launch nav.init
-document.addEventListener('DOMContentLoaded', nav.initListeners );
-document.addEventListener('DOMContentLoaded', nav.initObservers );
+document.addEventListener('DOMContentLoaded', nav.init);
+
 
   
