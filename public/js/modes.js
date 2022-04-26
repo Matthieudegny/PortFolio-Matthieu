@@ -1,4 +1,4 @@
-models= {
+const models= {
 
     buttons : {
         /*button color mode*/
@@ -42,8 +42,6 @@ models= {
                 models.initialParameters.darkMode = false;
             }
         },
-
-        
 
         changeLanguage () {
             if (models.initialParameters.frenchMode){
