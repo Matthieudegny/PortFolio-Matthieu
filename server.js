@@ -1,5 +1,7 @@
+const { response } = require('express');
 const express = require('express');
 const app = express();
+const cors = require("cors");
 require('dotenv').config();
 const nodemailer = require("nodemailer");
 const PORT = process.env.PORT || 3000;
@@ -7,13 +9,14 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
+
 /*front side*/
 app.get('/', (req,res) =>{
     res.sendFile(__dirname + '/public/pf.html')
 });
 
 /*back side (nodemailer)*/
-app.post('/', (req,res) => {
+app.post('/',(req,res) => {
     /*use data from the form*/
     const { email,message } = req.body;  
 
@@ -36,14 +39,13 @@ app.post('/', (req,res) => {
         Message: ${message}`,
     }
     
-    //send email with conditions in case there is an error
+    // send email with conditions in case there is an error
     transporter.sendMail(mailOptions,(error, info)=>{
      if(error){
-         console.log(error);
-         res.send("error");
+         console.log(error,info);
          res.sendFile(__dirname + '/public/pf.html')
      }else{
-         console.log('Email sent:' + info.response);       
+        console.log('Email sent:' + info.response);  
      }
     })    
 

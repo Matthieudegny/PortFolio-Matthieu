@@ -10,13 +10,13 @@ const contact = {
     },
     /*press button trigger the submission*/
     listener: function(){
-        contact.dataForm.contactForm.addEventListener('submit', request)
+        contact.dataForm.contactForm.addEventListener('submit', contact.actionListener.request)
     },
     
     /*the submission request the url (/) with ther server.js file
-    no data used hier i send back nothing to the front*/
+    no data used here i send back only one alert and clean the form board*/
     actionListener: {
-        request : (e) => {
+        request : () => {
             fetch('/')
             .then( res => {
                 if(res.ok){
@@ -27,6 +27,7 @@ const contact = {
                     window.alert("Une erreur est survenue, merci d'utiliser le lien Linkedin")
                     console.log("ERREUR");
                 }
+            
             })
         }
     }
@@ -36,5 +37,14 @@ document.addEventListener('DOMContentLoaded', contact.initContact);
 
 
   
-
+// .then( res => {
+//     if(res.ok){
+//         window.alert("Votre email a bien été envoyé")
+//         contact.dataForm.email.value = '';
+//         contact.dataForm.message.value = '';
+//     }else{
+//         window.alert("Une erreur est survenue, merci d'utiliser le lien Linkedin")
+//         console.log("ERREUR");
+//     }
+// })
         
