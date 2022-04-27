@@ -7,22 +7,26 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
 
+/*front side*/
 app.get('/', (req,res) =>{
     res.sendFile(__dirname + '/public/pf.html')
 });
 
+/*back side (nodemailer)*/
 app.post('/', (req,res) => {
-
+    /*use data from the form*/
     const { email,message } = req.body;  
 
+    // create reusable transporter object using the default SMTP transport
     const transporter = nodemailer.createTransport({
         service:'gmail',
         auth:{
-            user: process.env.GMAIL_USER,
-            pass: process.env.PASSWORD,
+            user: process.env.GMAIL_USER,// generated ethereal user
+            pass: process.env.PASSWORD,// generated ethereal password
         }
     })
     
+    //defined transport object
     const mailOptions = {
         from: email,
         to: process.env.GMAIL_USER,
@@ -32,6 +36,7 @@ app.post('/', (req,res) => {
         Message: ${message}`,
     }
     
+    //send email with conditions in case there is an error
     transporter.sendMail(mailOptions,(error, info)=>{
      if(error){
          console.log(error);
@@ -45,5 +50,5 @@ app.post('/', (req,res) => {
 })
 
 app.listen(PORT, () => {
-    console.log(`Server listening on http://localhost:3000`);
+    console.log(`Server listening on http://localhost:${PORT}`);
 })
