@@ -18,7 +18,7 @@ app.get('/', (req,res) =>{
 /*back side (nodemailer)*/
 app.post('/',(req,res) => {
     /*use data from the form*/
-    const { email,message } = req.body;  
+    const { email,message,emailState } = req.body;  
 
     // create reusable transporter object using the default SMTP transport
     const transporter = nodemailer.createTransport({
@@ -29,7 +29,7 @@ app.post('/',(req,res) => {
         }
     })
     
-    //defined transport object
+    // defined transport object
     const mailOptions = {
         from: email,
         to: process.env.GMAIL_USER,
@@ -46,6 +46,7 @@ app.post('/',(req,res) => {
          res.sendFile(__dirname + '/public/pf.html')
      }else{
         console.log('Email sent:' + info.response);  
+        emailState = "success"
      }
     })    
 

@@ -6,7 +6,9 @@ const contact = {
     dataForm:{
         contactForm : document.querySelector('.contact-form'),
         email : document.querySelector(".contact-email"),
-        message : document.querySelector(".contact-text")
+        message : document.querySelector(".contact-text"),
+        emailState : document.getElementById("input-hidden"),
+        server_url : "http://localhost:3000"
     },
     /*press button trigger the submission*/
     listener: function(){
@@ -17,7 +19,7 @@ const contact = {
     no data used here i send back only one alert and clean the form board*/
     actionListener: {
         request : () => {
-            fetch('/')
+            fetch(contact.dataForm.server_url)
             .then( res => {
                 if(res.ok){
                     window.alert("Votre email a bien été envoyé")
@@ -30,6 +32,7 @@ const contact = {
             
             })
         }
+        
     }
 }
 // when the loading is finish i launch contact.init
