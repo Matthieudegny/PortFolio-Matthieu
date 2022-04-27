@@ -45,7 +45,7 @@ const nav = {
     Observers:function () {
       /*creation of a new instance of the Class IntersectionObserver(connected with a method handleIntersectionOne, and the setting optionsLink)*/
       const observerSectionOne = new IntersectionObserver(nav.actionsObserver.handleIntersectsectionOne, nav.optionObserver.optionsLink);
-      /*the new obsever is set on sectionOne*/
+      /*the new obsever target sectionOne*/
       observerSectionOne.observe(nav.objectsSections.sectionOne)
 
       const observerSectionTwo = new IntersectionObserver(nav.actionsObserver.handleIntersectsectionTwo, nav.optionObserver.optionsLink)

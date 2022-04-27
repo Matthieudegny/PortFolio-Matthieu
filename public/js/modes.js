@@ -12,7 +12,6 @@ const models= {
         models.buttons.buttonModeBackgroundColor.addEventListener("click",models.actions.changeColor),
          /*listener setted to change the language mode */
         models.buttons.buttonLanguageMode.addEventListener("click",models.actions.changeLanguage)
-       
     },
 
     initialParameters : {
@@ -118,7 +117,7 @@ const models= {
     },
 }
 
-// when the loading is finish i launch models.init
+// when the loading is finish launch models.init
 document.addEventListener('DOMContentLoaded', models.initListeners );
 
 

@@ -1,122 +1,98 @@
 const sections = {
 
-  cards : {
-    cardOne : document.querySelector("#card-one"),
-    cardTwo : document.querySelector("#card-two"),
-    cardOneBack : document.getElementById("skill-card-one-back"),
-    cardTwoBack: document.getElementById("skill-card-two-back")
+  init: function () {
+    sections.observers();
   },
 
-  initListeners : {
+  /*objects as targets of observers*/
+  targetsObservers: {
+    targetAboutText : document.querySelector(".about-text"),
+    targetSkills : document.getElementById("skills-front"),
+    /*every cardContainers in sections PF are target and object Animated*/
+    cardContainor : document.querySelectorAll(".card-containor-after")
+  },
+
+  /*objects will be modificated by the intersection*/
+  objectsAnimatedWithObserver:{
+    aboutImage : document.querySelector(".container-picture"),
+    aboutLinks : document.querySelector(".about-link"),
+    frontItems : document.querySelectorAll(".item-front"),
+    backItems : document.querySelectorAll(".item-back")
+  },
+
+  /*array used for the timing in section Skills, method handleIntersectSkills*/
+  timingItemsSkills:{
+     front : [0.15, 0.35, 0.55, 0.75],
+     back : [ 0.8, 1, 1.2, 1.4 ,1.6]
+  },
+
+  observers: function () {
+    /*section About*/
+    /*creation of a new instance of the Class IntersectionObserver(connected with a method handleIntersectionOne, and the setting optionsLink)*/
+    const observerSectionAboutImage = new IntersectionObserver(sections.actionsObservers.handleIntersectAbout, sections.optionObserver.optionsSections)
+     /*the new obsever target targetAboutText*/
+    observerSectionAboutImage.observe(sections.targetsObservers.targetAboutText)
+
+    /*section Skills*/
+    const observerSectionSkills = new IntersectionObserver(sections.actionsObservers.handleIntersectSkills, sections.optionObserver.optionsSections)
+    observerSectionSkills.observe(sections.targetsObservers.targetSkills)
+
+    /*section PF*/
+    const observerPfContainor = new IntersectionObserver(sections.actionsObservers.handleIntersectPfContainor, sections.optionObserver.optionsSections)
+    sections.targetsObservers.cardContainor.forEach(container => observerPfContainor.observe(container))
+  },
+
+  actionsObservers: {
+    /*section About*/
+    /*the method handleIntersectionAbout:
+      if targetAboutText is macthed, then one animation is added at three elements (with three differents delays)*/
+    handleIntersectAbout: function(entries,observer){
+      entries.forEach(entry => {
+        if(entry.isIntersecting){   
+          sections.objectsAnimatedWithObserver.aboutImage.style.animation = "fromtop 1.2s  forwards",
+          sections.targetsObservers.targetAboutText.style.animation = "fromtop 1.2s 0.3s forwards",
+          sections.objectsAnimatedWithObserver.aboutLinks.style.animation = "fromtop 1.2s 0.6s forwards"
+           /*the animation is done, doesnt need anymore to observe this object*/
+          observer.unobserve(entry.target);
+        } 
+      })
+    },
+    
+    /*section Skills*/
+    handleIntersectSkills: function(entries, observer){
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          /*three objects animated by the observerIntersection fronTelements + backElements + additional-skills*/
+         for(let i = 0; i<sections.objectsAnimatedWithObserver.frontItems.length; i++){
+           /*two arrays ( front + back ) used as timing (one index -> one timing)*/
+           sections.objectsAnimatedWithObserver.frontItems[i].style.animation = `frontItems 0.7s ${sections.timingItemsSkills.front[i]}s forwards`
+         }
+         for(let i = 0; i<sections.objectsAnimatedWithObserver.backItems.length;i++){
+           sections.objectsAnimatedWithObserver.backItems[i].style.animation = `backItems 0.7s ${sections.timingItemsSkills.back[i]}s forwards`
+         }
+         document.querySelector("#additional-skills").style.animation = "additionalItems 1s 1.8s forwards"
+         observer.unobserve(entry.target);
+        }
+      })
+    },
+
+    /*section PF*/
+    handleIntersectPfContainor: function(entries, observer){
+      entries.forEach(entry => {
+        if(entry.isIntersecting) {entry.target.classList.add("card-animation")
+        observer.unobserve(entry.target);}
+      })
+    }
 
   },
 
-  actionsListener : {
-    increaseDivCardOneBack: function () {sections.cards.cardOneBack.style.transform ="scaleY(1)"},
-    decreaseDivCardOneBack: function () {sections.cards.cardOneBack.style.transform ="scaleY(0)"},
-    increaseDivCardTwoBack: function () {sections.cards.cardTwoBack.style.transform ="scaleY(1)"},
-    decreaseDivCardTwoBack: function () {sections.cards.cardTwoBack.style.transform ="scaleY(0)"}
-  }
+  optionObserver : {
+    optionsSections : {threshold: 0.75}
+  },
 }
+// when the loading is finish i launch sections.init
+document.addEventListener('DOMContentLoaded', sections.init);
 
 
-
-  /*animation des cartes
-  le selecteur par carte est privilégié à un selecteur class car cela crée
-  des lags au niveau de l'animation qd la souris bouge*/
- 
-
-  // cardOne.addEventListener("mouseover", (e) => {
-  //   document.getElementById("skill-card-one-back").style.transform ="scaleY(1)";
-  // })
-  // cardOne.addEventListener("mouseout", (e) => {
-  //   document.getElementById("skill-card-one-back").style.transform ="scaleY(0)";
-  // })
-  // cardTwo.addEventListener("mouseover", (e) => {
-  //   document.getElementById("skill-card-two-back").style.transform ="scaleY(1)";
-  // })
-  // cardTwo.addEventListener("mouseout", (e) => {
-  //   document.getElementById("skill-card-two-back").style.transform ="scaleY(0)";
-  // })
-
-
-/*intersection Observer*/
-let optionsSections = {
-    threshold: 0.75
-  }
-  
-  /*section about*/
-  /*about itersection observer*/
-  const aboutImage = document.querySelector(".container-picture");
-  let aboutText = document.querySelector(".about-text");
-  const aboutLinks = document.querySelector(".about-link");
-  let count = 0;
-  let lastTimeout;
-  function handleIntersectAbout(entries){
-    entries.forEach(entry => {
-      if(entry.isIntersecting){   
-          aboutImage.style.animation = "fromtop 1.2s  forwards",
-          aboutText.style.animation = "fromtop 1.2s 0.3s forwards",
-          aboutLinks.style.animation = "fromtop 1.2s 0.6s forwards"}
-    })
-  }
-  const observerSectionAboutImage = new IntersectionObserver(handleIntersectAbout, optionsSections)
-  observerSectionAboutImage.observe(aboutText)
-  
-  /*Section Skills*/
-  /*apparition des items avec object intersection*/
-  const targetSkills = document.getElementById("skills-front")
-  const frontItems = document.querySelectorAll(".item-front")
-  const backItems = document.querySelectorAll(".item-back")
-  
-  const timingItemsSkillFront = [0.15, 0.35, 0.55, 0.75]
-  const timingItemsSkillBack = [ 0.8, 1, 1.2, 1.4 ,1.6]
-  
-  function handleIntersectSkills(entries){
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-       for(let i = 0; i<frontItems.length; i++){
-         frontItems[i].style.animation = `frontItems 0.7s ${timingItemsSkillFront[i]}s forwards`
-       }
-       for(let i = 0; i<backItems.length;i++){
-         backItems[i].style.animation = `backItems 0.7s ${timingItemsSkillBack[i]}s forwards`
-       }
-       document.querySelector("#additional-skills").style.animation = "additionalItems 1s 1.8s forwards"
-      }
-    })
-  }
-  
-  const observerSectionSkills = new IntersectionObserver(handleIntersectSkills, optionsSections)
-  observerSectionSkills.observe(targetSkills)
- 
-  
-  /*Section PF*/
-  /*Intersection Obs Paramétrage du voile sur les containeurs du PF*/
-  const cardContainor = document.querySelectorAll(".card-containor-after")
-  function handleIntersectPfContainor(entries){
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add("card-animation")
-    })
-  }
-  const observerPfContainor = new IntersectionObserver(handleIntersectPfContainor, optionsSections)
-  cardContainor.forEach(container => {
-    observerPfContainor.observe(container)
-  })
-  
-  /*Pf Hover*/
-  const detailsboxes = document.querySelectorAll(".details")
-  
-  for(let boxe of detailsboxes){
-
-     boxe.addEventListener("mouseover", (e) => {
-      const element = e.target.parentElement.previousSibling.previousSibling.firstChild.nextSibling
-        element.classList.toggle("details-hover");
-     });
-     boxe.addEventListener("mouseout", (e) => {
-      const element = e.target.parentElement.previousSibling.previousSibling.firstChild.nextSibling
-        element.classList.toggle("details-hover");
-     });
-  }
-  
   
   
