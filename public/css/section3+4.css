@@ -342,7 +342,10 @@ disparaissant à l'intersection de la vue*/
         justify-content: center;
         padding-left: 2%; 
      }
-     #card-one{
+     .front-items{
+         flex-direction: column;
+     }
+     #card-one-skills{
         position: relative;
         grid-row-start: 1;
         grid-column-start: 2;
@@ -350,15 +353,16 @@ disparaissant à l'intersection de la vue*/
         grid-column-end: 3;
         height: 100%;
         width: 100%;
+    
      }
-     #skill-card-one-front{
+     #card-one-skills-front{
         width: 100%;
         height: 100%;
         margin-left: 0%;  
     }
-    #skill-card-one-back{    
-        margin-left: 0%;
-     }
+    #card-one-skills-back{
+        margin-left: 0;
+    }
      #skills-back {
         grid-row-start: 2;
         grid-column-start: 1;
@@ -370,7 +374,7 @@ disparaissant à l'intersection de la vue*/
         align-items:flex-start;
         text-align: left;
      }
-     #card-two {
+     #card-two-skills {
         position: relative;
         grid-row-start: 2;
         grid-column-start: 2;
@@ -389,7 +393,8 @@ disparaissant à l'intersection de la vue*/
         justify-content: center;
         align-items: center;
         height: 100%;
-        opacity: 0; 
+        width: 70%;
+        margin: 0 auto;
      }
 
 }
