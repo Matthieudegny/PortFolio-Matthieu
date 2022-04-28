@@ -1,13 +1,13 @@
 const { response } = require('express');
 const express = require('express');
 const app = express();
-const cors = require("cors");
 require('dotenv').config();
 const nodemailer = require("nodemailer");
 const PORT = process.env.PORT || 3000;
 
 app.use(express.static('public'));
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded( {extended: true} ))
+app.use(express.json());
 
 
 /*front side*/
@@ -16,42 +16,40 @@ app.get('/', (req,res) =>{
 });
 
 /*back side (nodemailer)*/
-app.post('/',(req,res) => {
-    /*use data from the form*/
-    const { email,message,emailState } = req.body;  
-
-    // create reusable transporter object using the default SMTP transport
-    const transporter = nodemailer.createTransport({
-        service:'gmail',
-        auth:{
-            user: process.env.GMAIL_USER,// generated ethereal user
-            pass: process.env.PASSWORD,// generated ethereal password
+app.post('/',(req,res) => { 
+    try{
+        // create reusable transporter object using the default SMTP transport
+        const transporter = nodemailer.createTransport({
+            service:'gmail',
+            auth:{
+                user: process.env.GMAIL_USER,// generated ethereal user
+                pass: process.env.PASSWORD,// generated ethereal password
+            }
+        })
+        
+        // defined transport object
+        const mailOptions = {
+            from: req.body.datas.email,
+            to: process.env.GMAIL_USER,
+            subject: "email from my Portfolio",
+            html: `You got a message from 
+            Email : ${req.body.datas.email} <br>
+            Message: ${req.body.datas.message}`,
         }
-    })
-    
-    // defined transport object
-    const mailOptions = {
-        from: email,
-        to: process.env.GMAIL_USER,
-        subject: "email from my Portfolio",
-        html: `You got a message from 
-        Email : ${email} <br>
-        Message: ${message}`,
+        
+        // send mail with defined transport object
+        transporter.sendMail(mailOptions, function(error, info){
+            res.status(200)
+            res.json({email:"email sent"})
+        });
+
+    //in case something is wrong with sendMail, i catch the error and send it back to the fecth from contact.js
+    }catch(error){
+        res.status(500)
+        res.json({message: error})
     }
-    
-    // send email with conditions in case there is an error
-    transporter.sendMail(mailOptions,(error, info)=>{
-     if(error){
-         console.log(error,info);
-         res.sendFile(__dirname + '/public/pf.html')
-     }else{
-        console.log('Email sent:' + info.response);  
-        emailState = "success"
-     }
-    })    
-
 })
-
+                
 app.listen(PORT, () => {
-    console.log(`Server listening on http://localhost:${PORT}`);
+console.log(`Server listening on http://localhost:${PORT}`);
 })
