@@ -176,7 +176,7 @@ sont wrappés*/
 #pf h2{
     padding-bottom: 50px;
 }
-.card-containor{
+.card-container{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -189,19 +189,19 @@ sont wrappés*/
     transition: 1s;
 }
 /*décalage des deux containeurs pour effet quinconce*/
-.card-containor:first-child{
+.card-container:first-child{
     margin-left: -20%;
     display: flex;
     align-items: flex-start;
 }
-.card-containor:nth-child(2){
+.card-container:nth-child(2){
     margin-right: -20%;
     display: flex;
     align-items: flex-end;
 }
 /*création du voile sur les containeurs
 disparaissant à l'intersection de la vue*/
-.card-containor-after{
+.card-container-after{
     content: "";
     display: block;
     position: absolute;
@@ -233,7 +233,7 @@ disparaissant à l'intersection de la vue*/
     }
 }
 /*partie header des containeurs*/
-.card-containor h3{
+.card-container h3{
     height: 15%;
 }
 /*partie image des containeurs*/
@@ -328,9 +328,10 @@ disparaissant à l'intersection de la vue*/
         grid-template-rows: 1fr 1fr 1fr; 
         grid-template-columns: 1fr 1fr;
         gap: 1%;
-        height: 80vh;
+        height: 88vh;
         width: 80vw;
         font-size: 2vw;
+        margin-top: 3%;
      }
      #skills-front {
         grid-row-start: 1;
@@ -344,6 +345,9 @@ disparaissant à l'intersection de la vue*/
      }
      .front-items{
          flex-direction: column;
+     }
+     .item-front{
+         margin-bottom: 2%;
      }
      #card-one-skills{
         position: relative;
@@ -396,6 +400,26 @@ disparaissant à l'intersection de la vue*/
         width: 70%;
         margin: 0 auto;
      }
+     /*section 4*/
+     #pf{
+         height: 150vh;
+         margin-bottom: 50px;
+     }
+     .card-container{
+         height: 45%;
+     }
+     .card-container:first-child{
+         margin: 0 auto;
+         align-items: center;
+         margin-bottom: 8%;
+     }
+     .card-container:nth-child(2){
+        margin: 0 auto;
+        align-items: center;
+    }
+    .card-container h3{
+        height: 8%;
+    }
 
 }
 

@@ -9,7 +9,7 @@ const sections = {
     targetAboutText : document.querySelector(".about-text"),
     targetSkills : document.getElementById("skills-front"),
     /*every cardContainers in sections PF are target and object Animated*/
-    cardContainor : document.querySelectorAll(".card-containor-after")
+    cardContainor : document.querySelectorAll(".card-container-after")
   },
 
   /*objects will be modificated by the intersection*/
