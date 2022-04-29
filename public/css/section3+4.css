@@ -422,6 +422,22 @@ disparaissant à l'intersection de la vue*/
     }
 
 }
+@media  screen and (max-width: 500px){
+    /*section 3*/
+    .container-skills{
+        font-size: 4vw;
+    }
+    /*section 4*/
+    #pf h3{
+        font-size: 4vw;
+    }
+    .card-footer{
+        font-size: 3vw;
+    }
+    .card-image-after-p{
+        font-size: 2.2vw;
+    }
+}
 
 
 /* <a href='https://fr.freepik.com/photos/fond'>Fond photo créé par pvproductions - fr.freepik.com</a> */

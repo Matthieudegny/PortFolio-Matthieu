@@ -149,3 +149,22 @@
         left: -4.25%;
     }
 }
+@media  screen and (max-width: 500px){
+    .left-contact{
+        width: 100%;
+    }
+    #contact h3{
+        width: 100%;
+        font-size: 4vw;
+    }
+    .contact-email{
+        font-size: 2.5vw;
+    }
+    .contact-text{
+        font-size: 2.5vw;
+    }
+    #contact-send{
+        width: 100%;
+        font-size: 2.5vw;
+    }
+}
