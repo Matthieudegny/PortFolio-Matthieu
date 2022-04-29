@@ -173,6 +173,9 @@
     color: var(--main-text-html-color);
     font-family: var(--main-html-font-family);
 }
+.html-about:last-child{
+    margin-top: 1%;
+}
 #about-p{
    line-height: 120%;
 }
