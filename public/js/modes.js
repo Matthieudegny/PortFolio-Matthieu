@@ -44,7 +44,7 @@ const models= {
 
         changeLanguage () {
             if (models.initialParameters.frenchMode){
-                /*english json (folder json) is used here*/
+                /*english js is used here*/
                 document.documentElement.style.setProperty('--main-mode-language', 'url(/img/logo/language/france.png)')
                 models.objectsLanguageToChange.homeLinkHome.textContent = english.home.Home
                 models.objectsLanguageToChange.homeLinkAbout.textContent = english.home.About
@@ -65,7 +65,7 @@ const models= {
                 models.objectsLanguageToChange.contactSend.value = english.contact.contactSend
                 models.initialParameters.frenchMode = false;
             } else {
-                 /*french json (folder json) is used here*/
+                 /*french js is used here*/
                 document.documentElement.style.setProperty('--main-mode-language', 'url(/img/logo/language/england.png)')
                 models.objectsLanguageToChange.homeLinkHome.textContent = french.home.Home
                 models.objectsLanguageToChange.homeLinkAbout.textContent = french.home.About

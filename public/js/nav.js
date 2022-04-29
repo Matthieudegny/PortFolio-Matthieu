@@ -43,22 +43,19 @@ const nav = {
 
     /*the goal is to make animated the navbar, depending on where is the user*/
     Observers:function () {
-      /*creation of a new instance of the Class IntersectionObserver(connected with a method handleIntersectionOne, and the setting optionsLink)*/
-      const observerSectionOne = new IntersectionObserver(nav.actionsObserver.handleIntersectsectionOne, nav.optionObserver.optionsLink);
-      /*the new obsever target sectionOne*/
-      observerSectionOne.observe(nav.objectsSections.sectionOne)
+      function createNewObserver(handleIntersect,target){
+        /*creation of a new instance of the Class IntersectionObserver*/
+        const newObserver = new IntersectionObserver(handleIntersect, nav.optionObserver.optionsLink)
+        /*target is setted for newObserver*/
+        newObserver.observe(target)
+      }
 
-      const observerSectionTwo = new IntersectionObserver(nav.actionsObserver.handleIntersectsectionTwo, nav.optionObserver.optionsLink)
-      observerSectionTwo.observe(nav.objectsSections.sectionTwo)
+      createNewObserver(nav.actionsObserver.handleIntersectsectionOne,nav.objectsSections.sectionOne)
+      createNewObserver(nav.actionsObserver.handleIntersectsectionTwo,nav.objectsSections.sectionTwo)
+      createNewObserver(nav.actionsObserver.handleIntersectsectionThree,nav.objectsSections.sectionThree)
+      createNewObserver(nav.actionsObserver.handleIntersectsectionFour,nav.objectsSections.sectionFour)
+      createNewObserver(nav.actionsObserver.handleIntersectsectionFive,nav.objectsSections.sectionFive)
 
-      const observerSectionThree = new IntersectionObserver(nav.actionsObserver.handleIntersectsectionThree, nav.optionObserver.optionsLink)
-      observerSectionThree.observe(nav.objectsSections.sectionThree)
-
-      const observerSectionFour = new IntersectionObserver(nav.actionsObserver.handleIntersectsectionFour, nav.optionObserver.optionsLink)
-      observerSectionFour.observe(nav.objectsSections.sectionFour)
-
-      const observerSectionFive = new IntersectionObserver(nav.actionsObserver.handleIntersectsectionFive, nav.optionObserver.optionsLink)
-      observerSectionFive.observe(nav.objectsSections.sectionFive)
     },
     
     actionsObserver:  {

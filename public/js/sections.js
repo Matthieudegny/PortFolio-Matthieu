@@ -28,14 +28,16 @@ const sections = {
 
   observers: function () {
     /*section About*/
-    /*creation of a new instance of the Class IntersectionObserver(connected with a method handleIntersectionOne, and the setting optionsLink)*/
-    const observerSectionAboutImage = new IntersectionObserver(sections.actionsObservers.handleIntersectAbout, sections.optionObserver.optionsSections)
-     /*the new obsever target targetAboutText*/
-    observerSectionAboutImage.observe(sections.targetsObservers.targetAboutText)
-
+    function createNewObserver(handleIntersect,target){
+      /*creation of a new instance of the Class IntersectionObserver*/
+      const newObserver = new IntersectionObserver(handleIntersect, sections.optionObserver.optionsSections)
+      /*target is setted for newObserver*/
+      newObserver.observe(target)
+    }
+    /*section About*/
+    createNewObserver(sections.actionsObservers.handleIntersectAbout,sections.targetsObservers.targetAboutText)
     /*section Skills*/
-    const observerSectionSkills = new IntersectionObserver(sections.actionsObservers.handleIntersectSkills, sections.optionObserver.optionsSections)
-    observerSectionSkills.observe(sections.targetsObservers.targetSkills)
+    createNewObserver(sections.actionsObservers.handleIntersectSkills,sections.targetsObservers.targetSkills)
 
     /*section PF*/
     const observerPfContainor = new IntersectionObserver(sections.actionsObservers.handleIntersectPfContainor, sections.optionObserver.optionsSections)
