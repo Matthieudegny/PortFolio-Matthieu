@@ -30,7 +30,7 @@ const cards = {
         decreaseDivCardTwoBack: function () {cards.skillsCards.cardTwoBack.style.transform ="scaleY(0)"}
     },
 
-    /*an array is make with all the elements having the class details (cardsPf)*/
+    /*an array is make with all the elements having the class details (footer cards Pf)*/
     pfCard : {
         detailsboxes : document.querySelectorAll(".details")
     },

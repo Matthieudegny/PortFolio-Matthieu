@@ -43,47 +43,57 @@ const models= {
         },
 
         changeLanguage () {
+            const {homeLinkHome, homeLinkAbout,homeLinkSkills,homeLinkPf,homeLinkContact,homeH1First,homeH1Second,homeH1Third,homeH1Fourth,
+                aboutH2,aboutP,aboutCv,skillsH2,skillsExp,skillsLanguage,contactH3,contactSend} = models.objectsLanguageToChange
+            const {Home,About,Skills,Pf,Contact,First,Second,Third,Fourth} = english.home
+            const {h2A,p,cv} = english.about
+            const {h2S,exp,language} = english.skills
+            const {h3,send} = english.contact
+            const {HomeF,AboutF,SkillsF,PfF,ContactF,FirstF,SecondF,ThirdF,FourthF} = french.home
+            const {h2AF,pF,cvF} = french.about
+            const {h2SF,expF,languageF} = french.skills
+            const {h3F,sendF} = french.contact
             if (models.initialParameters.frenchMode){
                 /*english js is used here*/
                 document.documentElement.style.setProperty('--main-mode-language', 'url(/img/logo/language/france.png)')
-                models.objectsLanguageToChange.homeLinkHome.textContent = english.home.Home
-                models.objectsLanguageToChange.homeLinkAbout.textContent = english.home.About
-                models.objectsLanguageToChange.homeLinkSkills.textContent = english.home.Skills
-                models.objectsLanguageToChange.homeLinkPf.textContent = english.home.Pf
-                models.objectsLanguageToChange.homeLinkContact.textContent = english.home.Contact
-                models.objectsLanguageToChange.homeH1First.textContent = english.home.First
-                models.objectsLanguageToChange.homeH1Second.textContent = english.home.Second
-                models.objectsLanguageToChange.homeH1Third.textContent = english.home.Third
-                models.objectsLanguageToChange.homeH1Fourth.innerHTML = english.home.Fourth
-                models.objectsLanguageToChange.aboutH2.textContent = english.about.aboutH2
-                models.objectsLanguageToChange.aboutP.innerHTML = english.about.aboutP
-                models.objectsLanguageToChange.aboutCv.textContent = english.about.aboutCv
-                models.objectsLanguageToChange.skillsH2.textContent = english.skills.skillsH2
-                models.objectsLanguageToChange.skillsExp.textContent = english.skills.skillsExp
-                models.objectsLanguageToChange.skillsLanguage.textContent = english.skills.skillsLanguage
-                models.objectsLanguageToChange.contactH3.textContent = english.contact.contactH3
-                models.objectsLanguageToChange.contactSend.value = english.contact.contactSend
+                homeLinkHome.textContent = Home
+                homeLinkAbout.textContent = About
+                homeLinkSkills.textContent = Skills
+                homeLinkPf.textContent = Pf
+                homeLinkContact.textContent = Contact
+                homeH1First.textContent = First
+                homeH1Second.textContent = Second
+                homeH1Third.textContent = Third
+                homeH1Fourth.innerHTML = Fourth
+                aboutH2.textContent = h2A
+                aboutP.innerHTML = p
+                aboutCv.textContent = cv
+                skillsH2.textContent = h2S
+                skillsExp.textContent = exp
+                skillsLanguage.textContent = language
+                contactH3.textContent = h3
+                contactSend.value = send
                 models.initialParameters.frenchMode = false;
             } else {
                  /*french js is used here*/
                 document.documentElement.style.setProperty('--main-mode-language', 'url(/img/logo/language/england.png)')
-                models.objectsLanguageToChange.homeLinkHome.textContent = french.home.Home
-                models.objectsLanguageToChange.homeLinkAbout.textContent = french.home.About
-                models.objectsLanguageToChange.homeLinkSkills.textContent = french.home.Skills
-                models.objectsLanguageToChange.homeLinkPf.textContent = french.home.Pf
-                models.objectsLanguageToChange.homeLinkContact.textContent = french.home.Contact
-                models.objectsLanguageToChange.homeH1First.textContent = french.home.First
-                models.objectsLanguageToChange.homeH1Second.textContent = french.home.Second
-                models.objectsLanguageToChange.homeH1Third.textContent = french.home.Third
-                models.objectsLanguageToChange.homeH1Fourth.innerHTML = french.home.Fourth
-                models.objectsLanguageToChange.aboutH2.textContent = french.about.aboutH2
-                models.objectsLanguageToChange.aboutP.innerHTML = french.about.aboutP
-                models.objectsLanguageToChange.aboutCv.textContent = french.about.aboutCv
-                models.objectsLanguageToChange.skillsH2.textContent = french.skills.skillsH2
-                models.objectsLanguageToChange.skillsExp.textContent = french.skills.skillsExp
-                models.objectsLanguageToChange.skillsLanguage.textContent = french.skills.skillsLanguage
-                models.objectsLanguageToChange.contactH3.textContent = french.contact.contactH3
-                models.objectsLanguageToChange.contactSend.value = french.contact.contactSend
+                homeLinkHome.textContent = HomeF
+                homeLinkAbout.textContent = AboutF
+                homeLinkSkills.textContent = SkillsF
+                homeLinkPf.textContent = PfF
+                homeLinkContact.textContent = ContactF
+                homeH1First.textContent = FirstF
+                homeH1Second.textContent = SecondF
+                homeH1Third.textContent = ThirdF
+                homeH1Fourth.innerHTML = FourthF
+                aboutH2.textContent = h2AF
+                aboutP.innerHTML = pF
+                aboutCv.textContent = cvF
+                skillsH2.textContent = h2SF
+                skillsExp.textContent = expF
+                skillsLanguage.textContent = languageF
+                contactH3.textContent = h3F
+                contactSend.value = sendF
                 models.initialParameters.frenchMode = true;
             }
         },
@@ -129,15 +139,15 @@ const nav = {
         nav.Listeners();
       },
 
-      objectsNavbar :{
+    objectsNavbar :{
         button : document.querySelector(".menu-nav-button"),
         cross : document.getElementById("logo-cross"),
         navBar: document.querySelector(".menu-nav")
-      },
+    },
 
-      Listeners: function() {
+    Listeners: function() {
         nav.objectsNavbar.button.addEventListener("click", nav.actionListener.animationNavBar)
-      },
+    },
 
     actionListener:{
         animationNavBar: function () {

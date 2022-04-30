@@ -33,7 +33,7 @@ const observer = {
         backItems : document.querySelectorAll(".item-back")
     },
 
-    /*array used for the timing in section Skills, method handleIntersectSkills*/
+    /*array used for the timing in section Skills*/
     timingItemsSkills:{
         front : [0.15, 0.35, 0.55, 0.75],back : [ 0.8, 1, 1.2, 1.4 ,1.6]
     },
@@ -44,42 +44,54 @@ const observer = {
         sections : {threshold: 0.75}
     },
 
+    /*list of observers*/
     observers: function () {
-        const {sectionOne,sectionTwo,sectionThree,sectionFour,sectionFive} = observer.triggersObservers
-        const{homeLink, aboutLink, skillsLink, pfLink, contactLink} = observer.targetsObserver
-        const{aboutText, skills} = observer.triggersObservers
+        const {sectionOne,sectionTwo,sectionThree,sectionFour,sectionFive,aboutText,skills} = observer.triggersObservers
+        const {sectionNav, sectionSkills, sectionAbout, sectionPf} = observer.actionIntersection
         const {links, linkPf, sections} = observer.optionsObserver
-        const sectionNav = observer.actionIntersection.sectionNav
-        observer.createObserver(sectionOne,sectionNav,links,homeLink)
-        observer.createObserver(sectionTwo,sectionNav,links,aboutLink)
-        observer.createObserver(sectionThree,sectionNav,links,skillsLink)
-        observer.createObserver(sectionFour,sectionNav,linkPf,pfLink)
-        observer.createObserver(sectionFive,sectionNav,links,contactLink)
-        observer.createObserver(aboutText,observer.actionIntersection.sectionAbout,sections)
-        observer.createObserver(skills,observer.actionIntersection.sectionSkills,sections) 
-        observer.createObserverPf()
+        const{homeLink, aboutLink, skillsLink, pfLink, contactLink} = observer.targetsObserver
+        const{classic, pf} = observer.activeWayObserver
+        
+        observer.createObserver(sectionOne,sectionNav,links,homeLink,classic)
+        observer.createObserver(sectionTwo,sectionNav,links,aboutLink,classic)
+        observer.createObserver(sectionThree,sectionNav,links,skillsLink,classic)
+        observer.createObserver(sectionFour,sectionNav,linkPf,pfLink,classic)
+        observer.createObserver(sectionFive,sectionNav,links,contactLink,classic)
+        observer.createObserver(aboutText,sectionAbout,sections,"null",classic)
+        observer.createObserver(skills,sectionSkills,sections,"null",classic) 
+        observer.createObserver("null",sectionPf, sections,"null",pf)
     },
 
-    createObserver: (trigger,action,option,target,pf) => {
-        function handleIntersection(entries){
-            entries.forEach(entry=> {
-            action(entry,target)
-            })
+    /**
+     * @param {Element} trigger objects as triggers of observers
+     * @param {function} action function with css's modifications
+     * @param {Object} option how observer is going to be trigger (conditions ex:50% of the target is intersecting)
+     * @param {Element} target whats are the elements going to be change by the observer
+     * @param {function} activeWay How the trigger is set, with one element or a loop on a class's elements
+     */
+    
+    /*method to creat observer*/
+    createObserver:(trigger,action,option,target,activeWay)=> {
+        function handleIntersect(entries){
+          entries.forEach(entry=> {
+            if(entry.isIntersecting) action(entry,target)
+          })
         }
-        const newObserver = new IntersectionObserver(handleIntersection, option)    
-        newObserver.observe(trigger)
+        const newObserver = new IntersectionObserver(handleIntersect,option)
+        activeWay(newObserver,trigger)
     },
 
-    createObserverPf:()=> {
-            function handleIntersect(entries){
-              entries.forEach(entry=> {
-                if(entry.isIntersecting) entry.target.classList.add("card-animation")
-              })
-            }
-            const newObserver = new IntersectionObserver(handleIntersect,observer.optionsObserver.sections)
-            observer.triggersObservers.cardContainor.forEach(container => {newObserver.observe(container)})
+    /*what is the way to active the observer (one element as a trigger / or a loop on a class of element*/
+    activeWayObserver:{
+        classic: function (newObserver,trigger) {
+            newObserver.observe(trigger)
+        },
+        pf: function (newObserver) {
+            observer.triggersObservers.cardContainor.forEach(containor=> {newObserver.observe(containor)})
+        },
     },
 
+    /*object with all actions for observers*/
     actionIntersection: {
         sectionNav: function (entry,target) {
             if(entry.isIntersecting){target.classList.add("link")}
@@ -105,8 +117,10 @@ const observer = {
                 document.querySelector("#additional-skills").style.animation = "additionalItems 1s 1.8s forwards"
             }
         },
-      },
-
+        sectionPf: function(entry, target) {
+            if(entry.isIntersecting) entry.target.classList.add("card-animation")
+        },
+    },
 }
 // when the loading is finish i launch observer.init
 document.addEventListener('DOMContentLoaded', observer.init);
