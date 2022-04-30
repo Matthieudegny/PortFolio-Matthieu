@@ -141,6 +141,7 @@
     border-radius: 20px;
     position: absolute;
     right: 10%;
+    opacity: 0;
  }
  /*about text part*/
 .container-text{
