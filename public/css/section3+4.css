@@ -176,11 +176,17 @@
     justify-content: center;
     align-items: flex-start;
     height: 60vh;
-    width: 100%;
-    margin-top: 5vh;
+    width: 53%;
+    margin-top: 8vh;
     /*overflow for card-after animation*/
     overflow: hidden;
     transition: 1s;
+}
+.right{
+    margin-left: 40%;
+}
+.left{
+    margin-right: 40%;
 }
 /*création du voile sur les containeurs
 disparaissant à l'intersection de la vue*/
@@ -192,8 +198,7 @@ disparaissant à l'intersection de la vue*/
     height: 100%;
     top: 0;
     left: 0;
-    opacity: 0.95;
-    background-image: linear-gradient(
+    /* background-image: linear-gradient(
   45deg,
   hsl(0deg 0% 0%) 5%,
   hsl(61deg 4% 10%) 40%,
@@ -205,7 +210,8 @@ disparaissant à l'intersection de la vue*/
   hsl(60deg 2% 63%) 91%,
   hsl(60deg 2% 73%) 96%,
   hsl(60deg 4% 84%) 100%
-); 
+);  */
+    background-color: var(--main-bg-color);
 }
 .card-animation{
     animation: slide-out 1.2s ease-out forwards;
@@ -217,17 +223,16 @@ disparaissant à l'intersection de la vue*/
 }
 /*partie header des containeurs*/
 #card-container h3{
-    min-height: 15%;
-    width: 60%;
+    height: 15%;
+    width: 100%;
     text-align: center;
     padding: 0;
 }
 /*partie image des containeurs*/
 #card-pf{
-    width: 60%;
+    width: 100%;
     height: 70%;
     /* background-image:0;  */
-   
     position: relative;
     
 }
@@ -240,7 +245,7 @@ disparaissant à l'intersection de la vue*/
 /*partie footer des containeurs*/
 .card-footer{
     height: 15%;
-    width: 60%;
+    width: 100%;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;

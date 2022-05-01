@@ -23,7 +23,7 @@ const english = {
         "language" : "Français parlé"
     },
     "portefolio":{
-
+        "cardOne": "welcome to my portefolio, 100% made with love and passion"
     },
     "contact":{
         "h3":"Let's build together",

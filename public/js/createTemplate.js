@@ -1,21 +1,27 @@
 const template = {
 
     init:function (){
-        template.create(template.modificationsTemplate.template1.h3,template.modificationsTemplate.template1.image,template.modificationsTemplate.template1.text,template.modificationsTemplate.template1.position),
-        template.create(template.modificationsTemplate.template1.h3,template.modificationsTemplate.template1.image,template.modificationsTemplate.template1.text,template.modificationsTemplate.template2.position),
+        const {T1h3,T1image,T1text,T1position} = template.modificationsTemplate.template1
+        const {T2h3,T2image,T2text,T2position} = template.modificationsTemplate.template2
+
+        template.create(T1h3,T1image,T1text,T1position),
+        template.create(T2h3,T2image,T2text,T2position),
 
         template.listener()      
     },
 
     modificationsTemplate:{
         template1:{
-            h3: "Projet 1",
-            image : "/img/contact.jpg",
-            text: "Bonjour, on fait une pause?",
-            position: "flex-end"
+            T1h3: "Projet 1: PortFolio",
+            T1image : "/img/home.jpg",
+            T1text: "welcome",
+            T1position: "right"
         },
         template2:{
-            position:"flex-start"
+            T2h3: "Projet 2: ATOM",
+            T2image : "/img/atom.jpg",
+            T2text: "welcome",
+            T2position: "left"
         }
     },
 
@@ -29,7 +35,7 @@ const template = {
         newtemplate.getElementById("h3-pf").textContent = h3,
         newtemplate.getElementById("image-pf").src = image,
         newtemplate.getElementById("card-image-after-p").textContent = text
-        newtemplate.getElementById("card-container").style.setProperty("align-items", position)
+        newtemplate.getElementById("card-container").classList.add(position)
         document.getElementById("container-template").appendChild(newtemplate)
     },
 

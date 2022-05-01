@@ -26,14 +26,21 @@ body{
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
 }
-/*toutes les sections feront au min 100vh,pf->différent*/
 section{
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
-
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    height: 95%;
+    margin: 0px auto ;
+}
 /*tous les titres*/
 h2{
     font-family:var(--main-titles-font-family);
@@ -50,49 +57,6 @@ h3{
     text-align: center;
     transition: 1s;
 }
-
-
-/*Rappel ordre 1section(width100%) -> pour 1 main(80%width) -> pour deux containeurs (40%width)*/
-.main{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    width: 80%;
-    height: 95%;
-    margin: 0px auto ;
-}
-.container{
-    width: 40%;
-    height: 80%;
-    margin: 50px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    opacity: 0;
-}
-/*pour tous les containeurs de gauche avec introduction animation par la gauche*/
-.left-move{
-   animation: changeleft 1.2s forwards;
-}
-@keyframes changeleft {
-    from{transform: translateX(-200px);
-    opacity: 0.25;}
-    to{transform: translateX(0px);
-    opacity: 1;}
-}
-/*pour tous les containeurs de droite avec introduction animation par la droite*/
-.right-move{
-    animation: changeright 1.2s forwards;
-    opacity: 1;  
- }
- @keyframes changeright {
-     from{transform: translateX(200px);
-        opacity: 0.25;}
-     to{transform: translateX(0px);
-        opacity: 1;}
- }
-
 
 @media screen and (max-width: 1320px) {
     h2{
