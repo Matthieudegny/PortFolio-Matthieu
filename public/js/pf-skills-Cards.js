@@ -54,3 +54,5 @@ const cards = {
 
 // when the loading is finish i launch cards.init
 document.addEventListener('DOMContentLoaded', cards.init);
+
+

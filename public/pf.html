@@ -172,9 +172,12 @@
 
         <section id="pf">
             <h2 id="pf-h2">Portfolio:</h2>
-            <main class="main">
+            <main class="main" id="container-template">
+
+                <template id="templateProject" class="templateProjects">
 
                 <div class="card-container">  
+                    <h1 id="h1-S">Test</h1>
                     <h3>Projet Société LAGIA</h3>
                     <div class="card card-one" >
                         <div class ="card-image-after"> 
@@ -192,7 +195,11 @@
                     <div class="card-container-after"></div>                 
                 </div>
 
-                <div class="card-container">  
+                </template>
+
+
+                <!-- <div class="card-container">  
+                    <h1 id="h1">Test</h1>
                     <h3>Projet Société LAGIA</h3>
                     <div class="card card-one" >
                         <div class ="card-image-after"> 
@@ -203,14 +210,13 @@
                         </div>                    
                     </div>
                     <footer class="card-footer ">
-                        <div class="footer-box details" id="footer-card-one" target="_blank">Détails</div>  
+                        <div class="footer-box details" id="footer-card-one">Détails</div>  
                            
-                        <a href="https://github.com/Matthieudegny" class="footer-box" >Github</a>
+                        <a href="https://github.com/Matthieudegny" class="footer-box" target="_blank">Github</a>
                     </footer>                    
                     <div class="card-container-after"></div>                 
-                </div>
+                </div> -->
 
-                
 
             </main>
      
@@ -253,11 +259,14 @@
         </section>
 
     </main>
+<script src="/js/createTemplate.js"></script>
 <script src="/js/contact.js"></script>
+<script src="/js/nav.js"></script>
 <script src="/js/observer.js"></script>
 <script src="/json/english.json"></script>
 <script src="/json/french.json"></script>
 <script src="/js/modes.js"></script>
 <script src="/js/pf-skills-Cards.js"></script>
+
 </body>
 </html>

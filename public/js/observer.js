@@ -1,5 +1,18 @@
+
+
+
+
+// let templateModel = document.getElementById("templateProject");
+
+// let template1 = templateModel.content.cloneNode(true);
+
+// document.getElementById("container-template").appendChild(template1)
+
+
+
 const observer = {
 
+  
     init: function () {
         observer.observers();
       },
@@ -15,7 +28,7 @@ const observer = {
         aboutText : document.querySelector(".about-text"),
         skills : document.getElementById("skills-front"),
         /*every cardContainers in sections PF are trigger and target(entry)*/
-        cardContainor : document.querySelectorAll(".card-container-after")
+        cardContainer : document.querySelectorAll(".card-container-after")
     },
 
     /*objects as targets of observers*/
@@ -59,14 +72,14 @@ const observer = {
         observer.createObserver(sectionFive,sectionNav,links,contactLink,classic)
         observer.createObserver(aboutText,sectionAbout,sections,"null",classic)
         observer.createObserver(skills,sectionSkills,sections,"null",classic) 
-        observer.createObserver("null",sectionPf, sections,"null",pf)
+        // observer.createObserver("null",sectionPf, sections,"null",pf)
     },
 
     /**
      * @param {Element} trigger objects as triggers of observers
      * @param {function} action function with css's modifications
      * @param {Object} option how observer is going to be trigger (conditions ex:50% of the target is intersecting)
-     * @param {Element} target whats are the elements going to be change by the observer
+     * @param {Element} target whats are the elements going to be change by the observer (only for nav observers, sections's element are directly modified in action)
      * @param {function} activeWay How the trigger is set, with one element or a loop on a class's elements
      */
     
@@ -74,7 +87,7 @@ const observer = {
     createObserver:(trigger,action,option,target,activeWay)=> {
         function handleIntersect(entries){
           entries.forEach(entry=> {
-            if(entry.isIntersecting) action(entry,target)
+            action(entry,target)
           })
         }
         const newObserver = new IntersectionObserver(handleIntersect,option)
@@ -87,7 +100,7 @@ const observer = {
             newObserver.observe(trigger)
         },
         pf: function (newObserver) {
-            observer.triggersObservers.cardContainor.forEach(containor=> {newObserver.observe(containor)})
+            observer.triggersObservers.cardContainer.forEach(container=> {newObserver.observe(container)})
         },
     },
 
@@ -119,8 +132,10 @@ const observer = {
         },
         sectionPf: function(entry, target) {
             if(entry.isIntersecting) entry.target.classList.add("card-animation")
-        },
+            console.log("pf")
+        },        
     },
 }
 // when the loading is finish i launch observer.init
 document.addEventListener('DOMContentLoaded', observer.init);
+
