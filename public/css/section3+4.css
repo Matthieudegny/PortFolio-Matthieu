@@ -165,39 +165,22 @@
 
 /*Section PF*//*************************************************/
 #pf{
-    height: 200vh;
+    height: 100%;
     margin-bottom: 100px;
 }
-/*hauteur plus grande sur cette section due aux deux containeurs qui
-sont wrappés*/
-#pf .main{
-    height: 100%;
-}
-#pf h2{
-    padding-bottom: 50px;
-}
-.card-container{
+
+#card-container{
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-bottom: 150px;
-    height: 40%;
-    width: 75%;
+    align-items: flex-start;
+    height: 60vh;
+    width: 100%;
+    margin-top: 5vh;
+    /*overflow for card-after animation*/
     overflow: hidden;
     transition: 1s;
-}
-/*décalage des deux containeurs pour effet quinconce*/
-.card-container:first-child{
-    margin-left: -20%;
-    display: flex;
-    align-items: flex-start;
-}
-.card-container:nth-child(2){
-    margin-right: -20%;
-    display: flex;
-    align-items: flex-end;
 }
 /*création du voile sur les containeurs
 disparaissant à l'intersection de la vue*/
@@ -233,31 +216,31 @@ disparaissant à l'intersection de la vue*/
     }
 }
 /*partie header des containeurs*/
-.card-container h3{
-    height: 15%;
+#card-container h3{
+    min-height: 15%;
+    width: 60%;
+    text-align: center;
+    padding: 0;
 }
 /*partie image des containeurs*/
-.card{
-    width: 100%;
+#card-pf{
+    width: 60%;
+    height: 70%;
+    /* background-image:0;  */
+   
+    position: relative;
+    
+}
+#image-pf{
+    background-size: cover;
     height: 100%;
-    background-position: center; 
-    background-repeat: no-repeat;
+    width: 100%;
     border-radius: 25px; 
 }
-.card-one{
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNXWu0RFwmMSv_OVhuOjz12QN4XBOF0_EFg&usqp=CAU);
-    background-size: cover;
-    position: relative;
-}
-.card-two{
-    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNXWu0RFwmMSv_OVhuOjz12QN4XBOF0_EFg&usqp=CAU);
-    background-size: cover;
-}
-
 /*partie footer des containeurs*/
 .card-footer{
     height: 15%;
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
@@ -279,7 +262,7 @@ disparaissant à l'intersection de la vue*/
 }
 
 /*partie hover carte déclenché par details*/
-.card-image-after-p{
+#card-image-after-p{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -291,6 +274,7 @@ disparaissant à l'intersection de la vue*/
     text-shadow: var(--main-text-shadow);
     margin: 0 auto;
 }
+/*class add with js*/
 .details-hover{
     transition: 0.4s;
     height: 100%;
@@ -400,27 +384,6 @@ disparaissant à l'intersection de la vue*/
         width: 70%;
         margin: 0 auto;
      }
-     /*section 4*/
-     #pf{
-         height: 150vh;
-         margin-bottom: 50px;
-     }
-     .card-container{
-         height: 45%;
-     }
-     .card-container:first-child{
-         margin: 0 auto;
-         align-items: center;
-         margin-bottom: 8%;
-     }
-     .card-container:nth-child(2){
-        margin: 0 auto;
-        align-items: center;
-    }
-    .card-container h3{
-        height: 8%;
-    }
-
 }
 @media  screen and (max-width: 500px){
     /*section 3*/
@@ -434,7 +397,7 @@ disparaissant à l'intersection de la vue*/
     .card-footer{
         font-size: 3vw;
     }
-    .card-image-after-p{
+    #card-image-after-p{
         font-size: 2.2vw;
     }
 }

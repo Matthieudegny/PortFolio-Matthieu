@@ -132,7 +132,6 @@ const observer = {
         },
         sectionPf: function(entry, target) {
             if(entry.isIntersecting) entry.target.classList.add("card-animation")
-            console.log("pf")
         },        
     },
 }

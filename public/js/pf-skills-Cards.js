@@ -46,7 +46,7 @@ const cards = {
     /*just one method for these two listeners: toggle details-hover (height:100%)*/
     functionsListenerPf : {
         toggle :(e) => {
-            const element = e.target.parentElement.previousSibling.previousSibling.firstChild.nextSibling
+            const element =  e.target.parentElement.previousSibling.previousSibling.children[1]
             element.classList.toggle("details-hover");
         }
     }
