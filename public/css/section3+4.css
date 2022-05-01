@@ -169,7 +169,7 @@
     margin-bottom: 100px;
 }
 
-#card-container{
+.card-container{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -177,7 +177,7 @@
     align-items: flex-start;
     height: 60vh;
     width: 53%;
-    margin-top: 8vh;
+    margin-top: 12vh;
     /*overflow for card-after animation*/
     overflow: hidden;
     transition: 1s;
@@ -194,23 +194,10 @@ disparaissant à l'intersection de la vue*/
     content: "";
     display: block;
     position: absolute;
-    width: 100%;
+    width: 103%;
     height: 100%;
     top: 0;
     left: 0;
-    /* background-image: linear-gradient(
-  45deg,
-  hsl(0deg 0% 0%) 5%,
-  hsl(61deg 4% 10%) 40%,
-  hsl(60deg 3% 18%) 54%,
-  hsl(60deg 2% 26%) 65%,
-  hsl(60deg 1% 35%) 73%,
-  hsl(60deg 1% 44%) 80%,
-  hsl(60deg 1% 53%) 86%,
-  hsl(60deg 2% 63%) 91%,
-  hsl(60deg 2% 73%) 96%,
-  hsl(60deg 4% 84%) 100%
-);  */
     background-color: var(--main-bg-color);
 }
 .card-animation{
@@ -222,25 +209,28 @@ disparaissant à l'intersection de la vue*/
     }
 }
 /*partie header des containeurs*/
-#card-container h3{
+.card-container h3{
     height: 15%;
     width: 100%;
     text-align: center;
     padding: 0;
 }
 /*partie image des containeurs*/
-#card-pf{
+.card-pf{
     width: 100%;
     height: 70%;
-    /* background-image:0;  */
     position: relative;
-    
-}
-#image-pf{
     background-size: cover;
     height: 100%;
     width: 100%;
     border-radius: 25px; 
+    
+}
+#img-pf-one{
+    background-image: url(/img/home.jpg); 
+}
+#img-pf-two{
+    background-image: url(/img/atom.jpg); 
 }
 /*partie footer des containeurs*/
 .card-footer{
@@ -279,6 +269,7 @@ disparaissant à l'intersection de la vue*/
     text-shadow: var(--main-text-shadow);
     margin: 0 auto;
 }
+
 /*class add with js*/
 .details-hover{
     transition: 0.4s;

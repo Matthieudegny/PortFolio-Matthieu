@@ -40,14 +40,17 @@ const cards = {
         for(let boxe of cards.pfCard.detailsboxes){
             boxe.addEventListener("mouseover", cards.functionsListenerPf.toggle);
             boxe.addEventListener("mouseout", cards.functionsListenerPf.toggle);
+           
          }
     },
 
     /*just one method for these two listeners: toggle details-hover (height:100%)*/
     functionsListenerPf : {
         toggle :(e) => {
-            const element =  e.target.parentElement.previousSibling.previousSibling.children[1]
+           
+            const element =  e.target.parentElement.parentElement.children[1].children[0]
             element.classList.toggle("details-hover");
+           
         }
     }
 }

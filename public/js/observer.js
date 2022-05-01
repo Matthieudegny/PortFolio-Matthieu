@@ -72,7 +72,7 @@ const observer = {
         observer.createObserver(sectionFive,sectionNav,links,contactLink,classic)
         observer.createObserver(aboutText,sectionAbout,sections,"null",classic)
         observer.createObserver(skills,sectionSkills,sections,"null",classic) 
-        // observer.createObserver("null",sectionPf, sections,"null",pf)
+        observer.createObserver("null",sectionPf, sections,"null",pf)
     },
 
     /**

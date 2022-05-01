@@ -44,15 +44,10 @@ const models= {
 
         changeLanguage () {
             const {homeLinkHome, homeLinkAbout,homeLinkSkills,homeLinkPf,homeLinkContact,homeH1First,homeH1Second,homeH1Third,homeH1Fourth,
-                aboutH2,aboutP,aboutCv,skillsH2,skillsExp,skillsLanguage,contactH3,contactSend} = models.objectsLanguageToChange
-            const {Home,About,Skills,Pf,Contact,First,Second,Third,Fourth} = english.home
-            const {h2A,p,cv} = english.about
-            const {h2S,exp,language} = english.skills
-            const {h3,send} = english.contact
-            const {HomeF,AboutF,SkillsF,PfF,ContactF,FirstF,SecondF,ThirdF,FourthF} = french.home
-            const {h2AF,pF,cvF} = french.about
-            const {h2SF,expF,languageF} = french.skills
-            const {h3F,sendF} = french.contact
+                aboutH2,aboutP,aboutCv,skillsH2,skillsExp,skillsLanguage, contactH3,contactSend} = models.objectsLanguageToChange
+            const {Home,About,Skills,Pf,Contact,First,Second,Third,Fourth,h2A,p,cv,h2S,exp,language, h3,send} = english
+            const {HomeF,AboutF,SkillsF,PfF,ContactF,FirstF,SecondF,ThirdF,FourthF,h2AF,pF,cvF,h2SF,expF,languageF,h3F,sendF} = french
+               
             if (models.initialParameters.frenchMode){
                 /*english js is used here*/
                 document.documentElement.style.setProperty('--main-mode-language', 'url(/img/logo/language/france.png)')
@@ -119,7 +114,7 @@ const models= {
         skillsExp : document.querySelector("#skills-exp"),
         skillsLanguage : document.querySelector("#skills-language"),
 
-        pfH2 : document.querySelector("#pf-h2"),
+        cardOne:document.getElementById("card-1"),
 
         contactH3 : document.querySelector("#contact-h3"),
         contactSend : document.querySelector("#contact-send"),
