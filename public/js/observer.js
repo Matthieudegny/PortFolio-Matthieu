@@ -100,7 +100,6 @@ const observer = {
         sectionNav: function (entry,target) {
             if(entry.isIntersecting){target.classList.add("link")}
             else{target.classList.remove("link")}
-            observer.setScrollSmooth()  
         },
         sectionAbout : function(entry) {
             if(entry.isIntersecting){ 
@@ -109,7 +108,6 @@ const observer = {
                 observer.triggersObservers.aboutText.style.animation = "fromtop 1.2s 0.3s forwards",
                 observer.targetsObserver.aboutLinks.style.animation = "fromtop 1.2s 0.6s forwards"
             }
-            observer.setScrollSmooth()  
         },
         sectionSkills: function(entry) {   
             if(entry.isIntersecting){ 
@@ -124,22 +122,14 @@ const observer = {
                 }
                 document.querySelector("#additional-skills").style.animation = "additionalItems 1s 1.8s forwards"
             }
-            observer.setScrollSmooth()  
         },
         sectionPf: function(entry, target) {
             if(entry.isIntersecting) {
                 observer.counter.counterAnimation++              
                 entry.target.classList.add("card-animation")
-            }   
-            observer.setScrollSmooth()    
+            }     
         }
-    },
-     /*after be done with all observers's animations, the site will be set with a smooth scroll*/
-    setScrollSmooth: () => {
-        if(observer.counter.counterAnimation == 5) document.documentElement.style.scrollBehavior = "smooth"
     }
-   
-
 }
 // when the loading is finish i launch observer.init
 document.addEventListener('DOMContentLoaded', observer.init);

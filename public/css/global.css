@@ -16,6 +16,7 @@
 html{
     font-size: 1em;
     font-family: var(--main-text-font-family);
+    scroll-behavior: smooth;
 }
 html a{
     color: var(--main-text-color);
