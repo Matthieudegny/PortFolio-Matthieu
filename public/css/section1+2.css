@@ -2,7 +2,7 @@
 #home{
     /*pour marge style écriture html*/
     padding-left: 125px;
-    background-image: url(/img/home.jpg);
+    background-image: url(/img/homeMin.jpg);
     background-position: center;
     background-size: cover; 
     background-attachment: fixed;
@@ -21,7 +21,7 @@
 }
 .h1 strong{
     font-weight: bolder;
-    font-size: 3vw;
+    font-size: 2.5vw;
 }
 .h1{
     position: relative;
