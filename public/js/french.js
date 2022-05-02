@@ -23,7 +23,9 @@ const french = {
     languageF : "English speaking",
 
     /*section4*/
-    cardOneF: "bienvenu mousaillon",
+    cardOneF: `Bienvenu sur mon PortFolio <br>
+    Réalisé 100% CSS JS Vanilla <br>
+    Module utilisé NodeMailer `,
     cardTwoF: "vise les étoiles",
 
      /*section5*/

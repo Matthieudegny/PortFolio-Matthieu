@@ -44,9 +44,9 @@ const models= {
 
         changeLanguage () {
             const {homeLinkHome, homeLinkAbout,homeLinkSkills,homeLinkPf,homeLinkContact,homeH1First,homeH1Second,homeH1Third,homeH1Fourth,
-                aboutH2,aboutP,aboutCv,skillsH2,skillsExp,skillsLanguage, contactH3,contactSend} = models.objectsLanguageToChange
-            const {Home,About,Skills,Pf,Contact,First,Second,Third,Fourth,h2A,p,cv,h2S,exp,language, h3,send} = english
-            const {HomeF,AboutF,SkillsF,PfF,ContactF,FirstF,SecondF,ThirdF,FourthF,h2AF,pF,cvF,h2SF,expF,languageF,h3F,sendF} = french
+                aboutH2,aboutP,aboutCv,skillsH2,skillsExp,skillsLanguage,pfCardOne, pfCardTwo, pfCardThree, contactH3,contactSend} = models.objectsLanguageToChange
+            const {Home,About,Skills,Pf,Contact,First,Second,Third,Fourth,h2A,p,cv,h2S,exp,language,cardOne, cardTwo, h3,send} = english
+            const {HomeF,AboutF,SkillsF,PfF,ContactF,FirstF,SecondF,ThirdF,FourthF,h2AF,pF,cvF,h2SF,expF,languageF,cardOneF,cardTwoF, h3F,sendF} = french
                
             if (models.initialParameters.frenchMode){
                 /*english js is used here*/
@@ -66,6 +66,8 @@ const models= {
                 skillsH2.textContent = h2S
                 skillsExp.textContent = exp
                 skillsLanguage.textContent = language
+                pfCardOne.innerHTML = cardOne
+                pfCardTwo.textContent = cardTwo
                 contactH3.textContent = h3
                 contactSend.value = send
                 models.initialParameters.frenchMode = false;
@@ -87,6 +89,8 @@ const models= {
                 skillsH2.textContent = h2SF
                 skillsExp.textContent = expF
                 skillsLanguage.textContent = languageF
+                pfCardOne.innerHTML = cardOneF
+                pfCardTwo.textContent = cardTwoF
                 contactH3.textContent = h3F
                 contactSend.value = sendF
                 models.initialParameters.frenchMode = true;
@@ -114,7 +118,9 @@ const models= {
         skillsExp : document.querySelector("#skills-exp"),
         skillsLanguage : document.querySelector("#skills-language"),
 
-        cardOne:document.getElementById("card-1"),
+        pfCardOne : document.getElementById("pf-cardOne-text"),
+        pfCardTwo : document.getElementById("pf-cardTwo-text"),
+        pfCardThree : document.getElementById("pf-cardThree-text"),
 
         contactH3 : document.querySelector("#contact-h3"),
         contactSend : document.querySelector("#contact-send"),
