@@ -1,18 +1,5 @@
-
-
-
-
-// let templateModel = document.getElementById("templateProject");
-
-// let template1 = templateModel.content.cloneNode(true);
-
-// document.getElementById("container-template").appendChild(template1)
-
-
-
 const observer = {
 
-  
     init: function () {
         observer.observers();
       },
@@ -44,6 +31,10 @@ const observer = {
         aboutLinks : document.querySelector(".about-link"),
         frontItems : document.querySelectorAll(".item-front"),
         backItems : document.querySelectorAll(".item-back")
+    },
+
+    counter:{
+        counterAnimation:""
     },
 
     /*array used for the timing in section Skills*/
@@ -91,7 +82,7 @@ const observer = {
           })
         }
         const newObserver = new IntersectionObserver(handleIntersect,option)
-        activeWay(newObserver,trigger)
+        activeWay(newObserver,trigger)        
     },
 
     /*what is the way to active the observer (one element as a trigger / or a loop on a class of element*/
@@ -109,16 +100,20 @@ const observer = {
         sectionNav: function (entry,target) {
             if(entry.isIntersecting){target.classList.add("link")}
             else{target.classList.remove("link")}
+            observer.setScrollSmooth()  
         },
         sectionAbout : function(entry) {
             if(entry.isIntersecting){ 
+                observer.counter.counterAnimation++
                 observer.targetsObserver.aboutImage.style.animation = "fromtop 1.2s  forwards",
                 observer.triggersObservers.aboutText.style.animation = "fromtop 1.2s 0.3s forwards",
                 observer.targetsObserver.aboutLinks.style.animation = "fromtop 1.2s 0.6s forwards"
             }
+            observer.setScrollSmooth()  
         },
-        sectionSkills: function(entry) {
+        sectionSkills: function(entry) {   
             if(entry.isIntersecting){ 
+                observer.counter.counterAnimation++
                 /*three objects animated by the observerIntersection fronTelements + backElements + additional-skills*/
                 for(let i = 0; i<observer.targetsObserver.frontItems.length; i++){
                     /*two arrays ( front + back ) used as timing (one index -> one timing)*/
@@ -129,11 +124,22 @@ const observer = {
                 }
                 document.querySelector("#additional-skills").style.animation = "additionalItems 1s 1.8s forwards"
             }
+            observer.setScrollSmooth()  
         },
         sectionPf: function(entry, target) {
-            if(entry.isIntersecting) entry.target.classList.add("card-animation")
-        },        
+            if(entry.isIntersecting) {
+                observer.counter.counterAnimation++              
+                entry.target.classList.add("card-animation")
+            }   
+            observer.setScrollSmooth()    
+        }
     },
+     /*after be done with all observers's animations, the site will be set with a smooth scroll*/
+    setScrollSmooth: () => {
+        if(observer.counter.counterAnimation == 5) document.documentElement.style.scrollBehavior = "smooth"
+    }
+   
+
 }
 // when the loading is finish i launch observer.init
 document.addEventListener('DOMContentLoaded', observer.init);

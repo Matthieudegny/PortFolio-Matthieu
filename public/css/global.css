@@ -21,10 +21,12 @@ html a{
     color: var(--main-text-color);
 }
 body{
+    scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
+    
 }
 section{
     height: 100vh;
