@@ -7,28 +7,28 @@ const cards = {
 
     /*Section Skills*/
     skillsCards : {
-        allCardsFront : document.querySelectorAll(".cards-skills"),
-        allCardsBack : document.querySelectorAll(".skills-cards-back")
+        cardOne : document.querySelector("#card-one-skills"),
+        cardTwo : document.querySelector("#card-two-skills"),
+        cardOneBack : document.getElementById("card-one-skills-back"),
+        cardTwoBack: document.getElementById("card-two-skills-back")
         },
 
+    /*the possibility to make an array contening the two cards was abandoned,
+    because this option was making the effect hover lagg on the card*/
     /*the animation created is a hover (mouseover+mouseout)on the two pictures in skills section,to make appear a text*/
     listenersSkills: function () {
-        for(let card of cards.skillsCards.allCardsFront){
-           card.addEventListener("mouseover", cards.functionsListenerSkills.increaseDivBack)
-           card.addEventListener("mouseout", cards.functionsListenerSkills.decreaseDivBack)
-        }
+        cards.skillsCards.cardOne.addEventListener("mouseover", cards.functionsListenerSkills.increaseDivCardOneBack),
+        cards.skillsCards.cardOne.addEventListener("mouseout", cards.functionsListenerSkills.decreaseDivCardOneBack),
+        cards.skillsCards.cardTwo.addEventListener("mouseover", cards.functionsListenerSkills.increaseDivCardTwoBack),
+        cards.skillsCards.cardTwo.addEventListener("mouseout", cards.functionsListenerSkills.decreaseDivCardTwoBack)
     },
 
     /*the div appear with a transform sacle(1) and desappear with scale(0)*/
     functionsListenerSkills : {
-        increaseDivBack: function(e){
-          e.target.nextSibling.nextSibling.style.transform = "scaleY(1)"
-        },
-        decreaseDivBack: function(){
-           for(let card of cards.skillsCards.allCardsBack){
-               card.style.transform = "scaleY(0)"
-           }
-        }
+        increaseDivCardOneBack: function () {cards.skillsCards.cardOneBack.style.transform ="scaleY(1)"},
+        decreaseDivCardOneBack: function () {cards.skillsCards.cardOneBack.style.transform ="scaleY(0)"},
+        increaseDivCardTwoBack: function () {cards.skillsCards.cardTwoBack.style.transform ="scaleY(1)"},
+        decreaseDivCardTwoBack: function () {cards.skillsCards.cardTwoBack.style.transform ="scaleY(0)"}
     },
 
     /*Section PF*/
