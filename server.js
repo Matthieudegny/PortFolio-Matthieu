@@ -38,7 +38,7 @@ app.post('/',(req,res) => {
         }
         
         // send mail with defined transport object
-        transporter.sendMail(mailOptions, function(error, info){
+        transporter.sendMail(mailOptions, (error, info) => {
             res.status(200)
             res.json({email:"email sent"})
         });

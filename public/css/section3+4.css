@@ -223,7 +223,7 @@ disparaissant à l'intersection de la vue*/
     background-size: cover;
     height: 100%;
     width: 100%;
-    border-radius: 25px; 
+    border-radius: 5px; 
     
 }
 #img-pf-one{
@@ -248,16 +248,23 @@ disparaissant à l'intersection de la vue*/
 .card-image-after{
     position: absolute;
     top:0px;
-    height: 0%;
+   
+    height: 100%;
     width: 100%;
-    border-radius: 25px;
+    border-radius: 5px;
     background-color: rgb(140, 146, 146);
     opacity: 0;
     transition: 0.3s; 
 }
+.after-right{
+    left: -100%;
+}
+.after-left{
+    right: -100%;
+}
 
 /*partie hover carte déclenché par details*/
-#card-image-after-p{
+.card-image-after-p{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -271,9 +278,14 @@ disparaissant à l'intersection de la vue*/
 }
 
 /*class add with js*/
-.details-hover{
+.details-hover-right{
     transition: 0.4s;
-    height: 100%;
+    left: 0;
+    opacity: 0.8;
+}
+.details-hover-left{
+    transition: 0.4s;
+    right: 0;
     opacity: 0.8;
 }
 @media screen and (max-width: 1520px){
