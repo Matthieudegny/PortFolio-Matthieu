@@ -16,12 +16,11 @@ const models= {
 
     initialParameters : {
         /*the pf is setted with a dark and french mode*/
-        darkMode : true,
-        frenchMode : true,
+        darkMode : false,
+        frenchMode : false,
     },
 
     actions: {
-
         changeColor() {
             if(!models.initialParameters.darkMode){
                 document.documentElement.style.setProperty('--main-mode-backgroundcolor', "url(/img/logo/backgroundColor/sun.png)")

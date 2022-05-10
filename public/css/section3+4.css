@@ -179,18 +179,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    height: 60vh;
-    width: 53%;
+    height: 70vh;
+    width: 65%;
     margin-top: 12vh;
     /*overflow for card-after animation*/
     overflow: hidden;
     transition: 1s;
 }
 .right{
-    margin-left: 40%;
+    margin-left: 25%;
 }
 .left{
-    margin-right: 40%;
+    margin-right: 25%;
 }
 /*création du voile sur les containeurs
 disparaissant à l'intersection de la vue*/
@@ -255,7 +255,6 @@ disparaissant à l'intersection de la vue*/
 .card-image-after{
     position: absolute;
     top:0px;
-   
     height: 100%;
     width: 100%;
     border-radius: 5px;

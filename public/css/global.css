@@ -3,14 +3,14 @@
     --main-html-font-family : 'La Belle Aurore', sans-serif;
     --main-titles-font-family: 'Raleway', sans-serif ;
     --main-text-font-family: 'Open Sans', sans-serif;
-    --main-mode-backgroundcolor: url(/img/logo/backgroundColor/sun.png);
+    --main-mode-backgroundcolor: url(/img/logo/backgroundColor/moon.png);
     --main-mode-language: url(/img/logo/language/england.png);
-    --main-bg-color:black;
-    --main-text-color:white;
+    --main-bg-color:white;
+    --main-text-color:black;
     --main-text-html-color: rgb(120, 113, 113);
     --main-text-shadow: 0px 0px 15px white;
-    --main-containors: rgb(40, 40, 38);
-    --main-containors-footer:rgb(11, 11, 11);
+    --main-containors: rgb(147, 147, 141);
+    --main-containors-footer:rgb(177, 175, 175);
     
 }
 html{

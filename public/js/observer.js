@@ -37,15 +37,10 @@ const observer = {
         counterAnimation:""
     },
 
-    /*array used for the timing in section Skills*/
-    timingItemsSkills:{
-        front : [0.15, 0.35, 0.55, 0.75],back : [ 0.8, 1, 1.2, 1.4 ,1.6]
-    },
-
     optionsObserver : {
         links : {threshold: 0.5},
         linkPf : {threshold:0.2},
-        sections : {threshold: 0.75}
+        sections : {threshold: 0.5}
     },
 
     /*list of observers*/
@@ -103,7 +98,6 @@ const observer = {
         },
         sectionAbout : function(entry) {
             if(entry.isIntersecting){ 
-                observer.counter.counterAnimation++
                 observer.targetsObserver.aboutImage.style.animation = "fromtop 1.2s  forwards",
                 observer.triggersObservers.aboutText.style.animation = "fromtop 1.2s 0.3s forwards",
                 observer.targetsObserver.aboutLinks.style.animation = "fromtop 1.2s 0.6s forwards"
@@ -111,21 +105,22 @@ const observer = {
         },
         sectionSkills: function(entry) {   
             if(entry.isIntersecting){ 
-                observer.counter.counterAnimation++
+                let counterAnimationSkillsDelay = 0;
+                const {frontItems, backItems} = observer.targetsObserver
                 /*three objects animated by the observerIntersection fronTelements + backElements + additional-skills*/
                 for(let i = 0; i<observer.targetsObserver.frontItems.length; i++){
-                    /*two arrays ( front + back ) used as timing (one index -> one timing)*/
-                    observer.targetsObserver.frontItems[i].style.animation = `frontItems 0.7s ${observer.timingItemsSkills.front[i]}s forwards`
+                    /*timing for the delay -> at each loop 0.2s */
+                    observer.targetsObserver.frontItems[i].style.animation = `frontItems 0.7s ${counterAnimationSkillsDelay += 0.2}s forwards`
                 }
                 for(let i = 0; i<observer.targetsObserver.backItems.length;i++){
-                    observer.targetsObserver.backItems[i].style.animation = `backItems 0.7s ${observer.timingItemsSkills.back[i]}s forwards`
+                    observer.targetsObserver.backItems[i].style.animation = `backItems 0.7s ${counterAnimationSkillsDelay += 0.2}s forwards`
                 }
-                document.querySelector("#additional-skills").style.animation = "additionalItems 1s 1.8s forwards"
+                /*delay 0.3s for additionnalItems*/
+                document.querySelector("#additional-skills").style.animation = `additionalItems 1s ${((frontItems.length+backItems.length)*0.2)+0.3}s forwards`
             }
         },
         sectionPf: function(entry, target) {
-            if(entry.isIntersecting) {
-                observer.counter.counterAnimation++              
+            if(entry.isIntersecting) {              
                 entry.target.classList.add("card-animation")
             }     
         }
