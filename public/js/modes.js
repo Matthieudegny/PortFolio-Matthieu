@@ -17,7 +17,7 @@ const models= {
     initialParameters : {
         /*the pf is setted with a dark and french mode*/
         darkMode : false,
-        frenchMode : false,
+        frenchMode : true,
     },
 
     actions: {

@@ -16,7 +16,7 @@ const english = {
 
     /*section2*/
     h2A : "About me:",
-    p : "I am a 33 years old developer, after 6 months of autodidact learning code, i decided to do a intensive training of 6 month with a bootcamp specialized in <strong>JavaScript</strong>  and <strong>React</strong> technologies. I wish now to integrate a company, to continue to evolve and blossom in the web development. </br>",
+    p : "I am a 33 years old developer, after 6 months of autodidact learning code, i decided to do a intensive training of 6 month with a bootcamp specialized in <strong>JavaScript</strong>  and <strong>React</strong> technologies.<br>I wish now to integrate a company, to continue to evolve and blossom in the web development. </br>",
     cv : "My CV",
 
     /*section3*/

@@ -14,7 +14,7 @@ const french = {
 
     /*section2*/
     h2AF : "A mon propos:",
-    pF :  "Je suis un développeur de 33 ans aprés avoir passé 6 mois en auto-didacte à apprendre le code, j'ai décidé de passer une formation de 6 mois spécialisé dans la techonolgie <strong>JavaScript</strong>  et le framework <strong>React</strong>.Je souhaite aujourd'hui intégrer une société pour continuer à évoluer et m'épanouir dans le développement web.</br>",
+    pF :  "Je suis un développeur de 33 ans aprés avoir passé 6 mois en auto-didacte à apprendre le code, j'ai décidé de passer une formation de 6 mois spécialisé dans la techonolgie <strong>JavaScript</strong>  et le framework <strong>React</strong>.<br> Je souhaite aujourd'hui intégrer une société pour continuer à évoluer et m'épanouir dans le développement web.</br>",
     cvF : "Mon CV",
 
     /*section3*/

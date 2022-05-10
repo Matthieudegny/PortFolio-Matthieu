@@ -72,7 +72,7 @@
 }
 @keyframes slide-out {
     100% {
-        transform: translateX(100%)
+        transform: translateX(101%)
     }
 }
 #h1-first{
