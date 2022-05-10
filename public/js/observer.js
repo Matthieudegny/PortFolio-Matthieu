@@ -39,6 +39,7 @@ const observer = {
 
     optionsObserver : {
         links : {threshold: 0.5},
+        /*the animation on section pf is set differently because the section is unusual*/
         linkPf : {threshold:0.2},
         sections : {threshold: 0.5}
     },
@@ -120,8 +121,10 @@ const observer = {
             }
         },
         sectionPf: function(entry, target) {
-            if(entry.isIntersecting) {              
-                entry.target.classList.add("card-animation")
+            if(entry.isIntersecting) {        
+                if(entry.target.offsetParent.classList.contains("right"))entry.target.classList.add("card-animation-right")
+                else entry.target.classList.add("card-animation-left")
+                
             }     
         }
     }

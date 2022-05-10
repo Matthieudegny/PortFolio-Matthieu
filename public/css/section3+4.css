@@ -204,12 +204,20 @@ disparaissant à l'intersection de la vue*/
     left: 0;
     background-color: var(--main-bg-color);
 }
-.card-animation{
-    animation: slide-out 1.2s ease-out forwards;
+.card-animation-right{
+    animation: slide-out-right 1.2s ease-out forwards;
 }
-@keyframes slide-out {
+@keyframes slide-out-right {
     100% {
         transform: translateX(101%)
+    }
+}
+.card-animation-left{
+    animation: slide-out-left 1.2s ease-out forwards;
+}
+@keyframes slide-out-left {
+    100% {
+        transform: translateX(-101%)
     }
 }
 /*partie header des containeurs*/
