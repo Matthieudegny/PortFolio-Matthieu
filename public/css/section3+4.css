@@ -113,7 +113,7 @@
     transition: 0.6s;
     border-radius: 10px; 
     color: rgb(22, 4, 124);
-    text-shadow: 2px 2px 12px rgb(139, 137, 158);
+    text-shadow: 2px 2px 12px rgb(254, 253, 255);
     font-weight: bolder;
  }
 /*container back-end*/
@@ -184,7 +184,8 @@
     align-items: flex-start;
     height: 70vh;
     width: 65%;
-    margin-top: 12vh;
+    margin-top: 6vh;
+    margin-bottom: 4vh;
     /*overflow for card-after animation*/
     overflow: hidden;
     transition: 1s;

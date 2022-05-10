@@ -3,7 +3,7 @@ const english = {
     Home : "Home",
     About : "About me",
     Skills : "Skills",
-    Pf : "Portefolio",
+    Pf : "My projects",
     Contact : "Contact",
 
     /*section1*/

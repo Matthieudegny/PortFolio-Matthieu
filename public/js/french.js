@@ -3,7 +3,7 @@ const french = {
     HomeF : "Accueil",
     AboutF : "A mon propos",
     SkillsF : "Compétences",
-    PfF : "Portefolio",
+    PfF : "Mes projets",
     ContactF : "contact",
     FirstF : "Hi,",
     SecondF : "Je suis Matthieu,",
