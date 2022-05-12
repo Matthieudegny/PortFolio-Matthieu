@@ -14,7 +14,7 @@ const cards = {
         },
 
     /*the possibility to make an array contening the two cards was abandoned,
-    because this option was making the effect hover lagg on the card*/
+    because this option was making the effect hover, lagg on the card*/
     /*the animation created is a hover (mouseover+mouseout)on the two pictures in skills section,to make appear a text*/
     listenersSkills: function () {
         cards.skillsCards.cardOne.addEventListener("mouseover", cards.functionsListenerSkills.increaseDivCardOneBack),
@@ -46,7 +46,7 @@ const cards = {
          }
     },
 
-    /*first step: check if the element target belong to a parentElement with class right or left (two animations, one for element class right, other class left)
+    /*first step: check if the element target belong to a parentElement with a class right or left (two animations, one for element class right, other class left)
     if that's the case, i select the appropriat animation 
     */
     functionsListenerPf : {
