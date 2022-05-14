@@ -1,14 +1,12 @@
 /*Section home*//**************************/
 #home{
-    /*pour marge style écriture html*/
-    padding-left: 125px;
     background-image: url(/img/homeMin.jpg);
     background-position: center;
     background-size: cover; 
     background-attachment: fixed;
 }
 .container-home{
-    margin:0px 10%;
+    margin: auto;
 }
 .home-main{
     display: flex;
@@ -17,17 +15,18 @@
     font-family: var(--main-titles-font-family);
     font-size: 2vw;
     letter-spacing: 10px;
-    padding-left: 140px; 
+    padding: 30px; 
 }
-.h1 strong{
+.home-h1 strong{
     font-weight: bolder;
     font-size: 2.5vw;
 }
-.h1{
+.home-h1{
     position: relative;
     overflow: hidden;
     color: transparent;
-    min-height: 87.5px;
+    margin: auto 0;
+    padding: 2% 0;
     animation: txt-appearance 1s 1.5s forwards;
 }
 @keyframes txt-appearance {
@@ -36,7 +35,7 @@
         text-shadow: 0px 0px 15px aliceblue ;
     }
 }
-.h1::after{
+.home-h1::after{
     position: absolute;
     content: "";
     display: block;
@@ -89,85 +88,49 @@
 }
 
 /*lignes type html*/
-.home-html{
-    font-size: 1.5vw;
-    font-family: var(--main-html-font-family);
-    color: var(--main-text-html-color);
-    padding: 45px 0px;
-}
-.home-html-body{
-    font-size: 1.5vw;
-    font-family: var(--main-html-font-family);
-    color: var(--main-text-html-color);
-    padding: 0px 45px ;
-}
 .home-html-h1{
     font-size: 1.5vw;
     font-family: var(--main-html-font-family);
     color: var(--main-text-html-color);
-    padding: 45px 105px;
 }
 
 /*section About*//******************************/
-/*GRID*/
 .about-container-main{
-    display: grid; 
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 0px;
+    display: flex;
     height: 70vh;
-    width: 80vw;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
  }
  /*picture part*/
  .container-picture {
-    grid-row-start: 1;
-    grid-column-start: 1;
-    grid-row-end: 5;
-    grid-column-end: 4;
     height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    position: relative;
- }
- #about-image{
-    background: url(/img/about.jpg)  no-repeat;
-    background-size: 80%;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-    box-sizing: content-box;
-    border-radius: 20px;
-    position: absolute;
-    right: 10%;
+    width: 35%;
+    background: url(/img/me.png)  no-repeat;
+    background-size: cover;
+    background-position: top;
+    border-radius: 30px;
     opacity: 0;
  }
  /*about text part*/
 .container-text{
-    grid-row-start: 1;
-    grid-column-start: 4;
-    grid-row-end: 4;
-    grid-column-end: 7;
     height: 100%;
-    width: 100%;
-    margin: 0 auto;
- }
- .about-text{ 
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
+    width: 50%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    font-size: 1.9vw;
+ }
+ .about-text{ 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-size: 1.2vw;
     text-align: justify;
     opacity: 0;
+    margin-bottom: 2%;
 }
 .about-text strong{
     font-weight: bolder;
-    font-size: 1.8vw;
-    transition: 0.5s;
     text-shadow: 1px 1px 2px black;
 }
 .html-about{
@@ -182,15 +145,10 @@
 }
 /*links part*/
 .about-link{
-    grid-row-start: 4;
-    grid-column-start: 4;
-    grid-row-end: 5;
-    grid-column-end: 7;
     display: flex;
     justify-content: center; 
     align-items: center;
     height: 12%;
-    height: 100%;
     width: 100%;
     opacity: 0; 
  }
@@ -198,7 +156,7 @@
 .about-link-a{
     margin: 0px 3%;
     padding: 1% 3%;
-    font-size: 2.5vw;
+    font-size: 1.8vw;
     position: relative;
     text-align: center;
     line-height: 70px;     
@@ -239,116 +197,81 @@
     }
 }
 
-@media screen and (max-width: 1620px){
-    /* section1 */
-    .home-html{
-        padding-top: 0px;
-    }
-}
 @media screen and (max-width: 1520px ){
-    /*section 1*/
-    #home{
-        padding: 40px;  
-    }
-    .home-main{
-        max-width: 97%;
-    }
-    .home-html-h1{
-        padding: 45px 65px ;
-    }
-}
-@media screen and (max-width: 1320px){
     /*section 2*/
-    .about-container-main{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .container-picture{
-        width: 100%;
-    }
-    #about-image{
-        position: relative;
-        right: 0;
-        width: 40%;
-        margin: 0 auto;
-    }
-    .container-text{
-
-    }
-    .about-link{
-        height: 15%;
+    .about-text{
+        font-size: 1.5vw;
     }
 }
 @media screen and (max-width: 1250px){
-    /*section1*/
-    .container-home{
-        margin-right: 0px;
+    /*section 1*/
+    #h1-second{
+        width: 60%;
     }
-    .home-title{
-        min-height: 50px;
+    /*section 2*/
+    #about .main{
+        width: 100%;
     }
-    .h1{
-        margin: 20px 0px;
-    } 
-}
-@media screen and (max-width: 1100px){
-    /*section1*/
-    .container-home{
-       padding-bottom: 20%;
-    }
-    .home-main{
-        padding-left: 70px;
+    .about-text{
+        font-size: 1.8vw;
     }
 }
 @media  screen and (max-width: 900px){
     /*section 1*/
     .container-home{
         width: 100%;
-        margin: 0;
-     }
-    #home{
-        padding: 15px; 
+        padding-left: 3.5%;
     }
-    .h1{
+    .home-h1{
         width: 95%;
-        line-height: 60px;  
+        margin: 5% 0;  
     }
-    /*section2*/
-    #about-p{
-        line-height: 150%;
-        margin: 1.5% 0;
+    /*section 2*/
+    .about-container-main{
+        flex-direction: column;
+        align-items: center;
+        height: 90%;
+    }
+    .container-picture{
+        width: 40%;
+    }
+    .container-text{
+        width: 90%;
+    }
+    .about-text{
+        margin-bottom: 3%;
     }
 }
-@media  screen and (max-width: 700px){
+@media  screen and (max-width: 650px){
     /*section 1*/
-    .home-html-body{
-        padding: 0px 10px;
-    }
-    .home-html-h1{
-        padding: 45px 15px;
+    .container-home{
+        padding: 0;
     }
     .home-main{
-        padding-left: 20px;
+        padding: 0;
     }
-    .home-title{
-        min-width: 95%; 
+    #h1-first{
+        width: 100%;
+    }
+    #h1-second{
+        width: 100%;
+    }
+    #h1-third{
+        width: 100%;
     }
     #h1-fourth{
-        max-width: 95%;
+        width: 100%;
+        line-height: 130%;
     }
-}
-@media  screen and (max-width: 500px){
-    /*section 1*/
-    #home{
-        align-items: center;
-    }
-    .container-home{
-        padding-bottom: 0;
-    }
-    .h1{
-        font-size: 4vw;
+    .home-h1{
+        font-size: 3vw;
         text-align: center;
+    }
+    .home-h1 strong{
+        font-size: 3.1vw;
+    }
+    .home-html-h1{
+        opacity: 0;
     }
     /*section 2*/
     #about-image{

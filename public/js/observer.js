@@ -27,7 +27,7 @@ const observer = {
         pfLink : document.getElementById("link-pf"),
         contactLink : document.getElementById("link-contact"),
         /*sections*/
-        aboutImage : document.querySelector("#about-image"),
+        aboutImage : document.querySelector(".container-picture"),
         aboutLinks : document.querySelector(".about-link"),
         frontItems : document.querySelectorAll(".item-front"),
         backItems : document.querySelectorAll(".item-back")

@@ -162,11 +162,19 @@
     .menu-nav-modes{
         margin-right: 1vw; 
     }
+    .menu-nav-button{
+        right: 3.5vw;
+        bottom: 0vw;
+    }
+    .menu-nav-logo{
+        width: 3vw;
+        height: 3vw;
+    }
 }
 
 @media screen and (max-width: 900px){
     .menu-nav-links-ul-a{
-        font-size: 3vw;
+        font-size: 2vw;
     }
     .menu-nav-modes{
         position: relative;

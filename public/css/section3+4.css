@@ -6,7 +6,7 @@
     gap: 1%;
     height: 70vh;
     width: 80vw;
-    font-size: 2vw;
+    font-size: 1.5vw;
  }
  .skills-header{
     margin-bottom: 2%;
@@ -173,7 +173,6 @@
 /*Section PF*//*************************************************/
 #pf{
     height: 100%;
-    margin-bottom: 100px;
 }
 
 .card-container{
@@ -241,7 +240,7 @@ disparaissant à l'intersection de la vue*/
     background-repeat: no-repeat;
     height: 100%;
     width: 100%;
-    border-radius: 5px; 
+    border-radius: 12px; 
     
 }
 #img-pf-one{
