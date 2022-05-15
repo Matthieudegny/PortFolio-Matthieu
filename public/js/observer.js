@@ -65,9 +65,10 @@ const observer = {
     /**
      * @param {Element} trigger objects as triggers of observers
      * @param {function} action function with css's modifications
-     * @param {Object} option how observer is going to be trigger (conditions ex:50% of the target is intersecting)
+     * @param {Object} option how observer is going to be trigger (conditions ex:50% of the target is intersected so action is initiated)
      * @param {Element} target whats are the elements going to be change by the observer (only for nav observers, sections's element are directly modified in action)
-     * @param {function} activeWay How the trigger is set, with one element or a loop on a class's elements(loop = trigger)
+     * @param {function} activeWay How the trigger is set, with one element = classic ( just one observer/one trigger ) 
+     * // or a loop (severals observers so severals triggers)   
      */
     
     /*method to creat observer*/

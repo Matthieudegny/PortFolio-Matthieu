@@ -11,21 +11,14 @@
     font-family: var(--main-titles-font-family);
     background-color: var(--main-bg-color);
 /* transition pour le décalage de la navbar */
-    transition: 2s all;
+    transition: 1s all;
     z-index: 1;
-    animation: nav 1s;
-    animation-delay: 2.3s;
-    top:-100px;
-    animation-fill-mode: forwards;
 }
-
-@keyframes nav{
-    from{top:-100px}
-    to{top:0px}
-}
+/*Animation JS*/
 .menu-nav-animation{ 
     transform: translateY(-101%) ; 
 }
+
 /*Nav Left*/
 .menu-nav-left{
     display: flex;
@@ -81,7 +74,7 @@
     right: 2vw;
     bottom: -0.5vw;
     cursor: pointer;
-    transition: 2s;
+    transition: 1s;
 }
 .menu-nav-logo{
     position: absolute;
@@ -94,12 +87,15 @@
     transition: 0.5s;
     margin-left: 1.5px;
 }
+
+/*Animation JS*/
 .logoCross-desappear{
     opacity: 0;
 }
 .menu-nav-button-animation{ 
     bottom:-3vw;
  }
+
 /*div boutons différents modes*/
 .menu-nav-modes{
     display: flex;

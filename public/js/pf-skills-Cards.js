@@ -37,7 +37,7 @@ const cards = {
         detailsboxes : document.querySelectorAll(".details")
     },
 
-    /*for all those elements, two listeners are added, one at entry, one at exit*/
+    /*for all those elements, two listeners are add, one at entry, one at exit*/
     listenersPf: function() {
         for(let boxe of cards.pfCard.detailsboxes){
             boxe.addEventListener("mouseover", cards.functionsListenerPf.toggle);
