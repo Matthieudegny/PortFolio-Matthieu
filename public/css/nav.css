@@ -16,7 +16,7 @@
 }
 /*Animation JS*/
 .menu-nav-animation{ 
-    transform: translateY(-101%) ; 
+    transform: translateY(-100%) ; 
 }
 
 /*Nav Left*/
@@ -126,9 +126,6 @@
 
 
 @media screen and (max-width: 1620px) {
-    .menu-nav{
-        height: 50px;
-    }
     .menu-nav-left{
         display: none;
     }
@@ -148,8 +145,11 @@
 }
 
 @media screen and (max-width: 900px){
+    /* .menu-nav-button-animation{ 
+        bottom:1vw;
+     } */
     .menu-nav-links-ul{
-        width: 100%;
+        width: 90%;
     }
     .menu-nav-modes{
         position: absolute;
@@ -158,14 +158,9 @@
     .menu-nav-modes{
         margin-right: 1vw; 
     }
-    .menu-nav-button{
-        right: 3.5vw;
-        bottom: 0vw;
-    }
-    .menu-nav-logo{
-        width: 3vw;
-        height: 3vw;
-    }
+    .menu-nav-button-animation{ 
+        bottom:-3vw;
+     }
 }
 
 @media screen and (max-width: 900px){
