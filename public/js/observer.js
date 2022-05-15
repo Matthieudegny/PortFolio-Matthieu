@@ -47,16 +47,21 @@ const observer = {
     /*list of observers*/
     observers: function () {
         const {sectionOne,sectionTwo,sectionThree,sectionFour,sectionFive,aboutText,skills} = observer.triggersObservers
-        const {sectionNav, sectionSkills, sectionAbout, sectionPf} = observer.actionIntersection
+        const {sectionNav,sectionHome, sectionSkills, sectionAbout, sectionPf} = observer.actionIntersection
         const {links, linkPf, sections} = observer.optionsObserver
         const{homeLink, aboutLink, skillsLink, pfLink, contactLink} = observer.targetsObserver
         const{classic, pf} = observer.activeWayObserver
         
+        /*Nav's observers*/
+        /*the link in the navbar matching whith the section where is the user -> animated with an underborderline
+        allow at the user to know where he in the page*/
         observer.createObserver(sectionOne,sectionNav,links,homeLink,classic)
         observer.createObserver(sectionTwo,sectionNav,links,aboutLink,classic)
         observer.createObserver(sectionThree,sectionNav,links,skillsLink,classic)
         observer.createObserver(sectionFour,sectionNav,linkPf,pfLink,classic)
         observer.createObserver(sectionFive,sectionNav,links,contactLink,classic)
+        /*Sections's observers*/
+        observer.createObserver(sectionOne,sectionHome,sections,"null",classic)
         observer.createObserver(aboutText,sectionAbout,sections,"null",classic)
         observer.createObserver(skills,sectionSkills,sections,"null",classic) 
         observer.createObserver("null",sectionPf, sections,"null",pf)
@@ -75,7 +80,7 @@ const observer = {
     createObserver:(trigger,action,option,target,activeWay)=> {
         function handleIntersect(entries){
           entries.forEach(entry=> {
-            action(entry,target)
+            action(entry,target);
           })
         }
         const newObserver = new IntersectionObserver(handleIntersect,option)
@@ -95,14 +100,26 @@ const observer = {
     /*object with all actions for observers*/
     actionIntersection: {
         sectionNav: function (entry,target) {
+            /*when a section is intersectiong a class link is add to the navlink corresponding, and then remove*/
             if(entry.isIntersecting){target.classList.add("link")}
             else{target.classList.remove("link")}
         },
+        sectionHome: function(entry) {
+            if(entry.isIntersecting){
+                document.querySelectorAll(".home-h1").forEach((element) => {
+                    element.style.animation = "txt-appearance 1s 1s forwards"
+                })
+                document.querySelectorAll(".home-h1-after").forEach((element)=> {
+                     element.classList.add("h1-after-animation")
+                }) 
+            }
+        },
+
         sectionAbout : function(entry) {
             if(entry.isIntersecting){ 
                 observer.targetsObserver.aboutImage.style.animation = "fromtop 1.2s  forwards",
                 observer.triggersObservers.aboutText.style.animation = "fromtop 1.2s 0.3s forwards",
-                observer.targetsObserver.aboutLinks.style.animation = "fromtop 1.2s 0.6s forwards"
+                observer.targetsObserver.aboutLinks.style.animation = "fromtop 1.2s 0.6s forwards";
             }
         },
         sectionSkills: function(entry) {   
@@ -125,7 +142,6 @@ const observer = {
             if(entry.isIntersecting) {        
                 if(entry.target.offsetParent.classList.contains("right"))entry.target.classList.add("card-animation-right")
                 else entry.target.classList.add("card-animation-left")
-                
             }     
         }
     }
@@ -133,3 +149,4 @@ const observer = {
 // when the loading is finish i launch observer.init
 document.addEventListener('DOMContentLoaded', observer.init);
 
+console.log(document.querySelectorAll(".home-h1"), ':after')
