@@ -33,10 +33,6 @@ const observer = {
         backItems : document.querySelectorAll(".item-back")
     },
 
-    counter:{
-        counterAnimation:""
-    },
-
     optionsObserver : {
         links : {threshold: 0.5},
         /*the animation on section pf is set differently because the section is unusual*/
@@ -61,6 +57,7 @@ const observer = {
         observer.createObserver(sectionFour,sectionNav,linkPf,pfLink,classic)
         observer.createObserver(sectionFive,sectionNav,links,contactLink,classic)
         /*Sections's observers*/
+        /*at each intersection of sections, some containers/text/pictures... appear*/
         observer.createObserver(sectionOne,sectionHome,sections,"null",classic)
         observer.createObserver(aboutText,sectionAbout,sections,"null",classic)
         observer.createObserver(skills,sectionSkills,sections,"null",classic) 
@@ -99,13 +96,16 @@ const observer = {
 
     /*object with all actions for observers*/
     actionIntersection: {
+
         sectionNav: function (entry,target) {
             /*when a section is intersectiong a class link is add to the navlink corresponding, and then remove*/
             if(entry.isIntersecting){target.classList.add("link")}
             else{target.classList.remove("link")}
         },
+
         sectionHome: function(entry) {
             if(entry.isIntersecting){
+                /*all the h1 elements appear when the entry is intersected*/
                 document.querySelectorAll(".home-h1").forEach((element) => {
                     element.style.animation = "txt-appearance 1s 1s forwards"
                 })
@@ -117,6 +117,7 @@ const observer = {
 
         sectionAbout : function(entry) {
             if(entry.isIntersecting){ 
+                /*all the about elements appear when the entry is intersected*/
                 observer.targetsObserver.aboutImage.style.animation = "fromtop 1.2s  forwards",
                 observer.triggersObservers.aboutText.style.animation = "fromtop 1.2s 0.3s forwards",
                 observer.targetsObserver.aboutLinks.style.animation = "fromtop 1.2s 0.6s forwards";
@@ -124,6 +125,8 @@ const observer = {
         },
         sectionSkills: function(entry) {   
             if(entry.isIntersecting){ 
+                /*all the skill elements appear when the entry is intersected*/
+                /*creation of a varibale counterAnimationSkillsDelay as delay counter for all the elements*/
                 let counterAnimationSkillsDelay = 0;
                 const {frontItems, backItems} = observer.targetsObserver
                 /*three objects animated by the observerIntersection fronTelements + backElements + additional-skills*/
@@ -134,11 +137,12 @@ const observer = {
                 for(let i = 0; i<observer.targetsObserver.backItems.length;i++){
                     observer.targetsObserver.backItems[i].style.animation = `backItems 0.7s ${counterAnimationSkillsDelay += 0.2}s forwards`
                 }
-                /*delay 0.3s for additionnalItems*/
+                /*delay +0.3s for additionnalItems*/
                 document.querySelector("#additional-skills").style.animation = `additionalItems 1s ${((frontItems.length+backItems.length)*0.2)+0.3}s forwards`
             }
         },
         sectionPf: function(entry, target) {
+            /*all the projects elements appear when the entry is intersected*/
             if(entry.isIntersecting) {        
                 if(entry.target.offsetParent.classList.contains("right"))entry.target.classList.add("card-animation-right")
                 else entry.target.classList.add("card-animation-left")
@@ -149,4 +153,3 @@ const observer = {
 // when the loading is finish i launch observer.init
 document.addEventListener('DOMContentLoaded', observer.init);
 
-console.log(document.querySelectorAll(".home-h1"), ':after')

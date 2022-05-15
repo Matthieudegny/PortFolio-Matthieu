@@ -43,7 +43,7 @@ app.post('/',(req,res) => {
             res.json({email:"email sent"})
         });
 
-    //in case something is wrong with sendMail, i catch the error and send it back to the fecth from contact.js
+    //in case something is wrong with sendMail, i catch the error and send it back to the fecth to contact.js
     }catch(error){
         res.status(500)
         res.json({message: error})

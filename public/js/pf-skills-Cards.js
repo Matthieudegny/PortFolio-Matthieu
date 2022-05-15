@@ -15,7 +15,7 @@ const cards = {
 
     /*the possibility to make an array contening the two cards was abandoned,
     because this option was making the effect hover, lagg on the card*/
-    /*the animation created is a hover (mouseover+mouseout)on the two pictures in skills section,to make appear a text*/
+    /*the animation created, is a hover (mouseover+mouseout) on the two pictures in skills section,to make appear a text*/
     listenersSkills: function () {
         cards.skillsCards.cardOne.addEventListener("mouseover", cards.functionsListenerSkills.increaseDivCardOneBack),
         cards.skillsCards.cardOne.addEventListener("mouseout", cards.functionsListenerSkills.decreaseDivCardOneBack),
@@ -32,7 +32,7 @@ const cards = {
     },
 
     /*Section PF*/
-    /*an array with all the elements having the class details (footer cards Pf)*/
+    /*an array with all the elements having the class details (footer cards projects)*/
     pfCard : {
         detailsboxes : document.querySelectorAll(".details")
     },
