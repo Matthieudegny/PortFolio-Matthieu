@@ -244,11 +244,13 @@ disparaissant à l'intersection de la vue*/
     
 }
 #img-pf-one{
-    background-image: url(/img/homeMin.jpg); 
-    
+    background-image: url(/img/homeMin.jpg);  
 }
 #img-pf-two{
     background-image: url(/img/atom.jpg); 
+}
+#img-pf-three{
+    background-image: url(/img/github.png);
 }
 /*partie footer des containeurs*/
 .card-footer{
@@ -282,16 +284,18 @@ disparaissant à l'intersection de la vue*/
 
 /*partie hover carte déclenché par details*/
 .card-image-after-p{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
     height: 100%;
     width: 90%;
-    font-size: 1.8vw;
+    font-size: 1vw;
+    font-weight: bold;
     line-height: 45px;
-    color: var(--main-text-color);
+    /* color: var(--main-text-color); */
+    color: white;
     text-shadow: var(--main-text-shadow);
-    margin: 0 auto;
+    margin: auto;
 }
 
 /*class add with js*/
