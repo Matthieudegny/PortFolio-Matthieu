@@ -252,6 +252,9 @@ disparaissant à l'intersection de la vue*/
 #img-pf-three{
     background-image: url(/img/github.png);
 }
+#img-pf-four{
+    background-image: url(/img/inProgress.jpg);
+}
 /*partie footer des containeurs*/
 .card-footer{
     height: 15%;
@@ -289,11 +292,11 @@ disparaissant à l'intersection de la vue*/
    justify-content: center;
     height: 100%;
     width: 90%;
-    font-size: 1vw;
+    font-size: 1.15vw;
     font-weight: bold;
+    font-style: oblique;
     line-height: 45px;
-    /* color: var(--main-text-color); */
-    color: white;
+    color: var(--main-text-color);
     text-shadow: var(--main-text-shadow);
     margin: auto;
 }
@@ -302,12 +305,12 @@ disparaissant à l'intersection de la vue*/
 .details-hover-right{
     transition: 0.4s;
     left: 0;
-    opacity: 0.8;
+    opacity: 0.95;
 }
 .details-hover-left{
     transition: 0.4s;
     right: 0;
-    opacity: 0.8;
+    opacity: 0.95;
 }
 @media screen and (max-width: 1520px){
     /*section 3*/
