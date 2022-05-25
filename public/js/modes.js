@@ -1,4 +1,4 @@
-const models= {
+const modes= {
 
     buttons : {
         /*button color mode*/
@@ -9,9 +9,9 @@ const models= {
 
     initListeners: function() {
         /*listener setted to change the color mode*/
-        models.buttons.buttonModeBackgroundColor.addEventListener("click",models.actions.changeColor),
+        modes.buttons.buttonModeBackgroundColor.addEventListener("click",modes.actions.changeColor),
          /*listener setted to change the language mode */
-        models.buttons.buttonLanguageMode.addEventListener("click",models.actions.changeLanguage)
+        modes.buttons.buttonLanguageMode.addEventListener("click",modes.actions.changeLanguage)
     },
 
     initialParameters : {
@@ -22,14 +22,14 @@ const models= {
 
     actions: {
         changeColor() {
-            if(!models.initialParameters.darkMode){
+            if(!modes.initialParameters.darkMode){
                 document.documentElement.style.setProperty('--main-mode-backgroundcolor', "url(/img/logo/backgroundColor/sun.png)")
                 document.documentElement.style.setProperty('--main-bg-color', "black")
                 document.documentElement.style.setProperty('--main-text-shadow', "0px 0px 15px white")
                 document.documentElement.style.setProperty('--main-text-color', "white")
                 document.documentElement.style.setProperty('--main-containors', "rgb(40, 40, 38)")
                 document.documentElement.style.setProperty('--main-containors-footer', "rgb(11, 11, 11)")
-                models.initialParameters.darkMode = true;
+                modes.initialParameters.darkMode = true;
             }else{
                 document.documentElement.style.setProperty('--main-mode-backgroundcolor', "url(/img/logo/backgroundColor/moon.png)")
                 document.documentElement.style.setProperty('--main-bg-color', "white")
@@ -37,17 +37,20 @@ const models= {
                 document.documentElement.style.setProperty('--main-text-color', "black")
                 document.documentElement.style.setProperty('--main-containors', "rgb(147, 147, 141)")
                 document.documentElement.style.setProperty('--main-containors-footer', "rgb(177, 175, 175)")
-                models.initialParameters.darkMode = false;
+                modes.initialParameters.darkMode = false;
             }
         },
 
         changeLanguage () {
             const {homeLinkHome, homeLinkAbout,homeLinkSkills,homeLinkPf,homeLinkContact,homeH1First,homeH1Second,homeH1Third,homeH1Fourth,
-                aboutH2,aboutP,aboutCv,skillsH2,skillsExp,skillsLanguage,pfCardOne, pfCardTwo, pfCardThree, contactH3,contactSend} = models.objectsLanguageToChange
-            const {Home,About,Skills,Pf,Contact,First,Second,Third,Fourth,h2A,p,cv,h2S,exp,language,cardOne, cardTwo, h3,send} = english
-            const {HomeF,AboutF,SkillsF,PfF,ContactF,FirstF,SecondF,ThirdF,FourthF,h2AF,pF,cvF,h2SF,expF,languageF,cardOneF,cardTwoF, h3F,sendF} = french
+                aboutH2,aboutP,aboutCv,skillsH2,skillsExp,skillsLanguage,pfH2, pfCardOne, pfCardTwo, pfCardThree,pfCardFour,detailButtons, 
+                sitesLink, contactH3,contactSend} = modes.objectsLanguageToChange
+            const {Home,About,Skills,Pf,Contact,First,Second,Third,Fourth,h2A,pf,cv,h2S,exp,language,h2P, cardOne,cardTwo,cardThree,cardFour,details,
+                 siteWeb, h3,send} = english
+            const {HomeF,AboutF,SkillsF,PfF,ContactF,FirstF,SecondF,ThirdF,FourthF,h2AF,pfF,cvF,h2SF,expF,languageF,h2PF, cardOneF,cardTwoF,cardThreeF,
+                 cardFourF,detailsF,siteWebF, h3F,sendF} = french
                
-            if (models.initialParameters.frenchMode){
+            if (modes.initialParameters.frenchMode){
                 /*english js is used here*/
                 document.documentElement.style.setProperty('--main-mode-language', 'url(/img/logo/language/france.png)')
                 homeLinkHome.textContent = Home
@@ -59,17 +62,31 @@ const models= {
                 homeH1Second.textContent = Second
                 homeH1Third.textContent = Third
                 homeH1Fourth.innerHTML = Fourth
+
                 aboutH2.textContent = h2A
-                aboutP.innerHTML = p
+                aboutP.innerHTML = pf
                 aboutCv.textContent = cv
+
                 skillsH2.textContent = h2S
                 skillsExp.textContent = exp
                 skillsLanguage.textContent = language
+
+                pfH2.textContent = h2P
                 pfCardOne.innerHTML = cardOne
-                pfCardTwo.textContent = cardTwo
+                pfCardTwo.innerHTML = cardTwo
+                pfCardThree.innerHTML = cardThree
+                pfCardFour.innerHTML = cardFour
+                detailButtons.forEach((button) => {
+                    button.textContent = details
+                })
+                sitesLink.forEach((site) => {
+                    site.textContent = siteWeb
+                })
+
                 contactH3.textContent = h3
                 contactSend.value = send
-                models.initialParameters.frenchMode = false;
+
+                modes.initialParameters.frenchMode = false;
             } else {
                  /*french js is used here*/
                 document.documentElement.style.setProperty('--main-mode-language', 'url(/img/logo/language/england.png)')
@@ -82,17 +99,31 @@ const models= {
                 homeH1Second.textContent = SecondF
                 homeH1Third.textContent = ThirdF
                 homeH1Fourth.innerHTML = FourthF
+
                 aboutH2.textContent = h2AF
-                aboutP.innerHTML = pF
+                aboutP.innerHTML = pfF
                 aboutCv.textContent = cvF
+
                 skillsH2.textContent = h2SF
                 skillsExp.textContent = expF
                 skillsLanguage.textContent = languageF
+
+                pfH2.textContent = h2PF
                 pfCardOne.innerHTML = cardOneF
-                pfCardTwo.textContent = cardTwoF
+                pfCardTwo.innerHTML = cardTwoF
+                pfCardThree.innerHTML = cardThreeF
+                pfCardFour.innerHTML = cardFourF
+                detailButtons.forEach((button) => {
+                    button.textContent = detailsF
+                })
+                sitesLink.forEach((site) => {
+                    site.textContent = siteWebF
+                })
+
                 contactH3.textContent = h3F
                 contactSend.value = sendF
-                models.initialParameters.frenchMode = true;
+
+                modes.initialParameters.frenchMode = true;
             }
         },
     },
@@ -117,9 +148,13 @@ const models= {
         skillsExp : document.querySelector("#skills-exp"),
         skillsLanguage : document.querySelector("#skills-language"),
 
+        pfH2 : document.querySelector("#pf-h2"),
         pfCardOne : document.getElementById("pf-cardOne-text"),
         pfCardTwo : document.getElementById("pf-cardTwo-text"),
         pfCardThree : document.getElementById("pf-cardThree-text"),
+        pfCardFour : document.getElementById("pf-cardFour-text"),
+        detailButtons: document.querySelectorAll(".details"),
+        sitesLink:document.querySelectorAll(".site"),
 
         contactH3 : document.querySelector("#contact-h3"),
         contactSend : document.querySelector("#contact-send"),
@@ -127,8 +162,8 @@ const models= {
     },
 }
 
-// when the loading is finish launch models.init
-document.addEventListener('DOMContentLoaded', models.initListeners );
+// when the loading is finish launch modes.init
+document.addEventListener('DOMContentLoaded', modes.initListeners );
 
 
 

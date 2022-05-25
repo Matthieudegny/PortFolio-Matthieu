@@ -4,7 +4,7 @@ const nav = {
     init:function(){
         nav.Listeners();
         /*3.5s after the loading of the dom,i put away the navBar,still available with the button*/
-        setTimeout(nav.actionListener.animationNavBar, 3500);
+        setTimeout(nav.actionListener.animationNavBar, 2500);
       },
     
     objectsNavbar :{
