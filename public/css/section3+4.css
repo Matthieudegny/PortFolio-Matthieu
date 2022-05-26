@@ -13,7 +13,9 @@
     position: relative;
     text-decoration: underline;
 }
-   
+.items{
+    font-family: var(--main-titles-font-family);
+}
  #skills-front {
     grid-row-start: 1;
     grid-column-start: 1;
