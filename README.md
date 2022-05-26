@@ -1,7 +1,20 @@
-# Portfolio
+# My Portfolio
 
-Bienvenu sur mon portefolio,
+<p align="center">
+  <kbd>
+    <img src="./public/img/homeMin.jpg"></img>
+  </kbd>
+</p>
 
-il n'est aps encore terminé,
+&nbsp;
 
-patience...
+## Technologies Used
+
+✔️ 100% JS Vanilla\
+✔️ 100% CSS Vanilla\
+✔️ NODE\
+✔️ EXPRESS\
+✔️ NODEMAILER
+
+
+
