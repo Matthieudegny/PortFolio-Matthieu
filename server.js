@@ -20,6 +20,8 @@ app.post('/',(req,res) => {
     try{
         // create reusable transporter object using the default SMTP transport
         const transporter = nodemailer.createTransport({
+            port: 465,
+            secure: false,
             service:'gmail',
             auth:{
                 user: process.env.GMAIL_USER,// generated ethereal user
