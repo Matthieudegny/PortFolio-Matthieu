@@ -12,27 +12,19 @@ const contact = {
 
     },
 
-
-    /*press button trigger the submission*/
     listener: function(){
         contact.dataForm.contactForm.addEventListener('submit', contact.actionListener.handleSubmit)
     },
     
-    /*the submission handlesubmit the url (/) with ther server.js file
-    no data used here i send back only one alert and clean the form board*/
+
     actionListener: {
         handleSubmit : (e) => {
             e.preventDefault();
-            //check the statut of the request sendMail
-            //and send the formdatas through the body (protection of the datas)
             fetch(contact.dataForm.server_url,{
-                //specify the method
                 method:"POST",
-                //specify content-type
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                //formDatas are send and change in json from the body
                 body: JSON.stringify({
                     datas: {
                         email: contact.dataForm.email.value,
@@ -41,7 +33,7 @@ const contact = {
                 })
             })
             .then(res => {
-                //if i got a positiv response from nodemailer
+
                 if(res.ok){
                     res.json()
                     .then(data => {
@@ -52,7 +44,6 @@ const contact = {
                         contact.dataForm.message.value = '';
                     })
                 }
-                // if i got a negative response from nodemailer
                 else{
                     console.log(res)
                     console.log("There is a problem with nodemailer")
@@ -72,5 +63,4 @@ const contact = {
         contact.dataForm.message.value = '';
     }
 }
-// when the loading is finish i launch contact.init
 document.addEventListener('DOMContentLoaded', contact.initContact);

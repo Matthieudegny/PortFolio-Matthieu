@@ -18,18 +18,17 @@ app.get('/', (req,res) =>{
 /*back side (nodemailer)*/
 app.post('/',(req,res) => { 
     try{
-        // create reusable transporter object using the default SMTP transport
         const transporter = nodemailer.createTransport({
+            host: "smtp.ethereal.email",
             port: 465,
-            secure: false,
+            secure: true,
             service:'gmail',
             auth:{
-                user: process.env.GMAIL_USER,// generated ethereal user
-                pass: process.env.PASSWORD,// generated ethereal password
+                user: process.env.GMAIL_USER,
+                pass: process.env.PASSWORD,
             }
         })
         
-        // defined transport object
         const mailOptions = {
             from: req.body.datas.email,
             to: process.env.GMAIL_USER,
@@ -39,13 +38,11 @@ app.post('/',(req,res) => {
             Message: ${req.body.datas.message}`,
         }
         
-        // send mail with defined transport object
         transporter.sendMail(mailOptions, (error, info) => {
             res.status(200)
             res.json({email:"email sent"})
         });
 
-    //in case something is wrong with sendMail, i catch the error and send it back to the fecth to contact.js
     }catch(error){
         res.status(500)
         res.json({message: error})
