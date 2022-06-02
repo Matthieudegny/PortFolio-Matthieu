@@ -18,6 +18,7 @@ app.get('/', (req,res) =>{
 /*back side (nodemailer)*/
 app.post('/',(req,res) => { 
     try{
+        
         const transporter = nodemailer.createTransport({
             host: "smtp.ethereal.email",
             port: 465,
@@ -28,7 +29,8 @@ app.post('/',(req,res) => {
                 pass: process.env.PASSWORD,
             }
         })
-        
+
+        console.log(req.body.datas.email)
         const mailOptions = {
             from: req.body.datas.email,
             to: process.env.GMAIL_USER,

@@ -13,11 +13,12 @@ const contact = {
     },
 
     listener: function(){
-        contact.dataForm.contactForm.addEventListener('submit', contact.actionListener.handleSubmit)
+         contact.dataForm.contactForm.addEventListener('submit', contact.actionListener.handleSubmit)
     },
     
 
     actionListener: {
+
         handleSubmit : (e) => {
             e.preventDefault();
             fetch(contact.dataForm.server_url,{
@@ -25,13 +26,17 @@ const contact = {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
+                body: JSON.stringify(
+                    {
                     datas: {
                         email: contact.dataForm.email.value,
                         message: contact.dataForm.message.value                  
                     }
-                })
-            })
+                }
+                )
+            }
+            )
+
             .then(res => {
 
                 if(res.ok){
