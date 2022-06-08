@@ -7,6 +7,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    max-width: 100vw;
     height: 8%;
     font-family: var(--main-titles-font-family);
     background-color: var(--main-bg-color);
@@ -64,6 +65,7 @@
 /*class pour animation lors de l'intersection observer*/
 .link{
     text-decoration: underline; 
+    font-style: italic;
 }
 
 /*Nav button*/
@@ -152,22 +154,67 @@
         width: 90%;
     }
     .menu-nav-modes{
-        position: absolute;
-        right: 2%;
+        position: relative; 
     }
-    .menu-nav-modes{
-        margin-right: 1vw; 
+    .menu-nav-button{
+        right: 4vw;
+        bottom: 0.35vw;
+    }
+    .menu-nav-logo{
+        width: 3.5vw;
+        height: 3.5vw;
+        margin-left: 1.5px;
     }
     .menu-nav-button-animation{ 
         bottom:-3vw;
      }
-}
-
-@media screen and (max-width: 900px){
+    .menu-nav-modes{
+        justify-content: flex-start;
+        height: 100%;
+        width: 15%;
+    }
+     #language-mode{
+        height: 4vw;
+        width: 4vw;
+        margin-right: 4%;
+    }
+    /*Bouton mode couleur*/
+    #backgroundcolor-mode{
+        height: 4vw;
+        width: 4vw;
+    }
     .menu-nav-links-ul-a{
         font-size: 2vw;
     }
+}
+@media screen and (max-width: 500px){
+    .menu-nav-links-ul-a{
+        font-size: 2.75vw;
+    }
+    .menu-nav-button{
+        right: 6vw;
+        bottom: 1.5vw;
+    }
+    .menu-nav-logo{
+        width: 5.5vw;
+        height: 5.5vw;
+        margin-left: 1.5px;
+    }
+    .menu-nav-button-animation{ 
+        bottom:-3vw;
+     }
+     #language-mode{
+        height: 5vw;
+        width: 5vw;
+        margin-right: 4%;
+    }
+    #backgroundcolor-mode{
+        height: 5vw;
+        width: 5vw;
+    }
     .menu-nav-modes{
-        position: relative;
+        justify-content: space-evenly;
+        height: 100%;
+        width: 15%;
     }
 }

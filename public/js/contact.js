@@ -32,7 +32,7 @@ const contact = {
                         email: contact.dataForm.email.value,
                         message: contact.dataForm.message.value                  
                     }
-                }
+                    }
                 )
             }
             )
