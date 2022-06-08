@@ -76,6 +76,5 @@ h3{
 @media  screen and (max-width: 500px){
     h2{
         font-size: 4vw;
-        padding-top: 55px;
     }
 }

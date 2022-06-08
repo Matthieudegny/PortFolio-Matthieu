@@ -193,7 +193,7 @@
     }
     .menu-nav-button{
         right: 6vw;
-        bottom: -2.7vw;
+        bottom: -3vw;
     }
     .menu-nav-logo{
         width: 5.5vw;
@@ -201,7 +201,7 @@
         margin-left: 1.5px;
     }
     .menu-nav-button-animation{ 
-        bottom:-2.7vw;
+        bottom:-3vw;
      }
      #language-mode{
         height: 5vw;
@@ -216,5 +216,8 @@
         justify-content: space-evenly;
         height: 100%;
         width: 15%;
+    }
+    #contact h2{
+        padding-top: 20px;
     }
 }

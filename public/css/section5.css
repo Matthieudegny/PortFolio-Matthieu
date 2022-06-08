@@ -102,21 +102,20 @@
 }
 /*Boutton Send*/
 #contact-container-button{
-    height: 10%;
-    width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 2%;
+    margin-bottom: 6%;
 }
 #contact-send{
     height: 100%;
     width: 100%;
     font-size: 1.5vw;
-    padding: 2%;
+    padding: 1vw;
     font-weight:900;
     color: rgb(8, 8, 8);
     background-color: rgb(223, 228, 201);
+    border: none;
     border-radius: 5px;
     cursor: pointer; 
 }
@@ -148,6 +147,9 @@
     }
     .contact-social-network{
         left: -4.25%;
+    }
+    #contact-send{
+        padding: 2vw;
     }
 }
 @media  screen and (max-width: 500px){
