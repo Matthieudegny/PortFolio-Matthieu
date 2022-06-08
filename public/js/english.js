@@ -35,38 +35,50 @@ const english = {
     /*section4*/
     h2P:"My projects:",
     cardOne: "As my first project, that was important for me, to realize this application 100% JS and CSS Vanilla. During the realiszation \
-    i improved my organisation and my work's vision\
+    i improved my organisation and my work's vision.\
     </br>\
-    <span>Partie Front:</span>\
+    <span>Front part :</span>\
     The intersection Observer interface was selected to dynamize the user experience asynchronously. A dark mode and french mode were planed at \
-    the plannification of the application\
+    the plannification of the application.\
     </br>\
-    <span>Partie Back:</span>\
-    The Nodemailer module was used in order to create a contact section, The request respect a REST API structure \
+    <span>Back part :</span>\
+    The Nodemailer module was used in order to create a contact section, The request respect a REST API structure. \
     ",
     cardTwo:" The purposes through the creation of this application, were to improved my abilities to manipulate fetch, and respect some guidelines about design and \
-    user interface\
+    user interface.\
     </br>\
-    <span>Partie Front:</span>\
-    The Particles Js library was selected to animate the application, the main goal was to respect the space topic \
+    <span>Front part :</span>\
+    The Particles Js library was selected to animate the application, the main goal was to respect the space topic. \
     </br>\
-    <span>Partie Back:</span>\
-    The datas are provided by the NASA public API \
+    <span>Back part :</span>\
+    The datas are provided by the NASA public API. \
      ",
     
     cardThree:" Creation of an application to assist developers, to obtain a list of repositories, selected with a search term. The goal was to practice and \
-    use my React skills, particularly hooks, react-router and axios\
+    use my React skills, particularly hooks, react-router and axios.\
     </br>\
-    <span>Partie Front:</span>\
-    Material-UI allowed me to create a special user interface, as well as SASS\
+    <span>Front part :</span>\
+    Material-UI allowed me to create a special user interface, as well as SASS.\
     </br>\
-    <span>Partie Back:</span>\
+    <span>Back part :</span>\
     The datas are provided by the Github public API, thanks Axios module. \
     ",
 
-    cardFour:"Project in progress, application exploiting Redux, \
+    cardFour:"Creation of an application about kitchen recipes, in order to use my abilities involving redux. Setup with severals reducers, and \
+    middlewares to handle the requests. \
     </br>\
-    release in mid-june",
+    <span>Front part :</span>\
+    React, redux, material UI and SASS.\
+    <span>Back part :</span>\
+    The datas are provided by the Spoonacular public API.",
+
+    cardFive:"Essencial is my first project, in professionnal conditions, as last step of my training. I have the responsability to work as Git master.\
+    The main goal is to work as a team (4 persons) during one month, with a real organization : implementation of wireframes, MCD, briefings, sprints... \
+    The application is a social network, around the sustainable development.\
+    <span>Front part :</span>\
+    React, redux, material UI and SASS.\
+    <span>Back part :</span>\
+    PostgreSQL, Sqitch, JSON Web tokens.",
 
     details: "Details",
 

@@ -57,6 +57,7 @@
     justify-content: space-evenly;
     align-items: center;
     width: 50%;
+    margin-right: 10%;
 }
 .menu-nav-links-ul-a{
     text-decoration: none;  
@@ -140,6 +141,7 @@
     }
     .menu-nav-links-ul{
         min-width: 70%;
+        margin-right: 0;
     }
     .menu-nav-links-a{
         margin: 15px 0px;

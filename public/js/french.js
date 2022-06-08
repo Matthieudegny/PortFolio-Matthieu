@@ -39,14 +39,14 @@ const french = {
     darkmode sont également prévus lors de la plannification de l'application.\
     </br>\
     <span>Partie Back:</span> \
-    Le module Nodemailer est selectionné partie back, pour répondre au bseoin d'une section d'échange, paramètré en API REST",
+    Le module Nodemailer est selectionné partie back, pour répondre au bseoin d'une section d'échange, paramètré en API REST.",
 
     cardTwoF: "  L'objectif à travers la réalisation du site ATOM est la maitrise et l'exploitation des requêtes fetch, et le développement \
     de mes apptitudes au niveau front.\
     </br>\
     <span>Partie Front:</span>\
     La librairie Particles js est choisie pour l'animation du site. L'objectif étant de respecter au mieux le thème de l'espace avec un code couleur\
-    proche de celui de la NASA\
+    proche de celui de la NASA.\
     </br>\
     <span>Partie Back:</span>\
     Les données seront fournies par l'API publique de la NASA.",
@@ -55,14 +55,29 @@ const french = {
     de React et de ses fonctionnalités, notamment les hooks, le module react-router et axios.\
     </br>\
     <span>Partie Front:</span>\
-    Utilisation de React, material UI, et SASS\
+    Utilisation de React, material UI, et SASS.\
     </br>\
     <span>Partie Back:</span>\
-    Les données seront fournies par l'api publique de github",
+    Les données seront fournies par l'api publique de github.",
 
-    cardFourF: "Projet en cours de production, application react redux\
+    cardFourF: " Réalisation d'une application de recettes de cuisine, afin d'utiliser mes compétences liées à redux. Mise en place de plusieurs reduceurs,\
+    et de middlewares pour la gestion asynchrone. \
     </br>\
-    Sortie de l'application mi juin",
+    <span>Partie Front :</span>\
+    Utilisation de React,redux, material UI, et SASS.\
+    </br>\
+    <span>Partie Back :</span>\
+    Les données seront fournies par l'api publique de spoonacular.",
+
+    cardFiveF:" Réalisation d'une application dans le cadre de ma formation, en tant que git master. L'objectif est de valider toutes les compétences développées \
+    durant ces 5 derniers mois. Tout cela dans un cadre professionnel avec la réalisation de wireframes, MCD, briefings, sprints...\
+    L'application ets un réseau social autour du developpement durable  (déployé fin juin).\
+    </br>\
+    <span>Partie Front :</span>\
+    Utilisation de React,redux, material UI, et SASS.\
+    </br>\
+    <span>Partie Back :</span>\
+    PostgreSQL, Sqitch, JSON Web tokens.",
 
     detailsF: "Détails",
 

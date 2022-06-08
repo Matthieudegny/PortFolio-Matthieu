@@ -43,12 +43,12 @@ const modes= {
 
         changeLanguage () {
             const {homeLinkHome, homeLinkAbout,homeLinkSkills,homeLinkPf,homeLinkContact,homeH1First,homeH1Second,homeH1Third,homeH1Fourth,
-                aboutH2,aboutP,aboutCv,skillsH2,skillsExp,skillsLanguage,pfH2, pfCardOne, pfCardTwo, pfCardThree,pfCardFour,detailButtons, 
+                aboutH2,aboutP,aboutCv,skillsH2,skillsExp,skillsLanguage,pfH2, pfCardOne, pfCardTwo, pfCardThree,pfCardFour,pfCardFive, detailButtons, 
                 sitesLink, contactH3,contactSend} = modes.objectsLanguageToChange
-            const {Home,About,Skills,Pf,Contact,First,Second,Third,Fourth,h2A,pf,cv,h2S,exp,language,h2P, cardOne,cardTwo,cardThree,cardFour,details,
+            const {Home,About,Skills,Pf,Contact,First,Second,Third,Fourth,h2A,pf,cv,h2S,exp,language,h2P, cardOne,cardTwo,cardThree,cardFour,cardFive, details,
                  siteWeb, h3,send} = english
             const {HomeF,AboutF,SkillsF,PfF,ContactF,FirstF,SecondF,ThirdF,FourthF,h2AF,pfF,cvF,h2SF,expF,languageF,h2PF, cardOneF,cardTwoF,cardThreeF,
-                 cardFourF,detailsF,siteWebF, h3F,sendF} = french
+                 cardFourF,cardFiveF, detailsF,siteWebF, h3F,sendF} = french
                
             if (modes.initialParameters.frenchMode){
                 /*english js is used here*/
@@ -76,6 +76,7 @@ const modes= {
                 pfCardTwo.innerHTML = cardTwo
                 pfCardThree.innerHTML = cardThree
                 pfCardFour.innerHTML = cardFour
+                pfCardFive.innerHTML = cardFive
                 detailButtons.forEach((button) => {
                     button.textContent = details
                 })
@@ -113,6 +114,7 @@ const modes= {
                 pfCardTwo.innerHTML = cardTwoF
                 pfCardThree.innerHTML = cardThreeF
                 pfCardFour.innerHTML = cardFourF
+                pfCardFive.innerHTML = cardFiveF
                 detailButtons.forEach((button) => {
                     button.textContent = detailsF
                 })
@@ -153,6 +155,7 @@ const modes= {
         pfCardTwo : document.getElementById("pf-cardTwo-text"),
         pfCardThree : document.getElementById("pf-cardThree-text"),
         pfCardFour : document.getElementById("pf-cardFour-text"),
+        pfCardFive : document.getElementById("pf-cardFive-text"),
         detailButtons: document.querySelectorAll(".details"),
         sitesLink:document.querySelectorAll(".site"),
 
