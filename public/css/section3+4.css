@@ -252,6 +252,9 @@ disparaissant à l'intersection de la vue*/
 #img-pf-four{
     background-image: url(/img/bonApetit.png);
 }
+#img-pf-five{
+    background-image: url(/img/inProgress.jpg);
+}
 /*partie footer des containeurs*/
 .card-footer{
     height: 15%;
