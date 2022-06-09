@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+    app:
+      build:
+        context: .
+        dockerfile: ./Dockerfile
+      image: matthieu-degny-portfolio
+      stdin_open: true
+      tty: true
+      expose:
+        - 3000
+      labels:
+        - traefik.http.routers.matthieu-degny-portfolio.rule=Host(`matthieu-degny-portfolio.site`, `www.matthieu-degny-portfolio.site`)
+        - traefik.http.routers.matthieu-degny-portfolio.tls=true
+        - traefik.http.routers.matthieu-degny-portfolio.tls.certresolver=lets-encrypt
+        - traefik.port=80
+
+networks:
+  default:
+    external:
+      name: web
+
