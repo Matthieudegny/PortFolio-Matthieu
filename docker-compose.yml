@@ -2,7 +2,6 @@ version: '3.8'
 
 services:
     matthieu-degny-portfolio:
-      container_name: matthieu-degny-portfolio
       build:
         context: .
         dockerfile: ./Dockerfile
