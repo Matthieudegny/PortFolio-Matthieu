@@ -8,9 +8,9 @@ services:
         dockerfile: ./Dockerfile
       restart: always
       volumes:
-        - /home/kenny/server/app_node/portfolio_matthieu/:/portfolio_matthieu/
+        - /home/kenny/server/app_node/portfolio_matthieu:/portfolio_matthieu/
       expose:
-        - 80
+        - 3000
       labels:
         - traefik.http.routers.matthieu-degny-portfolio.rule=Host(`matthieu-degny-portfolio.site`, `www.matthieu-degny-portfolio.site`)
         - traefik.http.routers.matthieu-degny-portfolio.tls=true

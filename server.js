@@ -12,7 +12,7 @@ app.use(express.json());
 
 /*front side*/
 app.get('/', (req,res) =>{
-    res.sendFile(__dirname + '/public/index.html')
+    res.sendFile('index.html')
 });
 
 /*back side (nodemailer)*/
