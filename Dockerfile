@@ -1,5 +1,5 @@
 FROM node:16
-WORKDIR /matthieu-degny-portfolio
+WORKDIR /portfolio_matthieu
 COPY ./package.json .
 RUN npm install
 COPY . .
