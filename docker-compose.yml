@@ -1,10 +1,13 @@
 version: '3.8'
 
 services:
-    matthieu-degny-portfolio:
+    app:
       build:
         context: .
         dockerfile: ./Dockerfile
+      image: node_portfolio_matthieu
+      stdin_open: true
+      tty: true
       restart: always
       volumes:
         - /home/kenny/server/app_node/portfolio_matthieu:/portfolio_matthieu/
