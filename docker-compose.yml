@@ -9,8 +9,6 @@ services:
       stdin_open: true
       tty: true
       restart: always
-      volumes:
-        - /home/kenny/server/app_node/portfolio_matthieu:/portfolio_matthieu/
       expose:
         - 3000
       labels:
