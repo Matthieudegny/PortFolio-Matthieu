@@ -41,16 +41,13 @@ const contact = {
 
                 if(res.ok){
                     res.json()
-                    .then(data => {
-                        console.log(data)
-                        console.log(res)                
+                    .then(data => {            
                         window.alert("Votre email a bien été envoyé")
                         contact.dataForm.email.value = '';
                         contact.dataForm.message.value = '';
                     })
                 }
                 else{
-                    console.log(res)
                     console.log("There is a problem with nodemailer")
                     contact.errorResponse()
                 }
