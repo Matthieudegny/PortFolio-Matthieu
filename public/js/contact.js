@@ -21,9 +21,6 @@ const contact = {
 
         handleSubmit : (e) => {
             e.preventDefault();
-            grecaptcha.execute('6LfjGGAgAAAAAFLfWgXnrIWAros5eXRvZbgMEu14', {action: 'submit'}).then(function(token) { 
-
-                const captcha = token
 
                 fetch(contact.dataForm.server_url,{
                     method:"POST",
@@ -34,14 +31,12 @@ const contact = {
                         {
                             datas: {
                                 email: contact.dataForm.email.value,
-                                message: contact.dataForm.message.value,
-                                captcha: captcha               
+                                message: contact.dataForm.message.value,           
                             }
                         }
                         )
                     }
                 )
-            })
 
             .then(res => {
 
