@@ -322,12 +322,21 @@
                         <div class="right-contact"> 
                             <form class="contact-form" id="contact-form">
 
+                                <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+                                
                                 <input class="contact-email" type="email" placeholder="e-mail" name="email" required>
                                 
                                 <textarea name="message" id="contact-form" cols="30" rows="10" class="contact-text" type="text" placeholder="text" required></textarea> 
                                 
                                 <div id="contact-container-button">
-                                    <input id="contact-send" type="submit" value="Envoyer">
+                                    <input    
+                                    class="g-recaptcha" 
+                                    data-sitekey="reCAPTCHA_site_key" 
+                                    data-callback='onSubmit' 
+                                    data-action='submit'               
+                                    id="contact-send"
+                                    type="submit" 
+                                    value="Envoyer">
                                 </div> 
                            
                             </form>        
@@ -342,6 +351,12 @@
         </section>
 
     </main>
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+    function onSubmit(token) {
+      document.getElementById("contact-form").submit();
+    }
+  </script>
 <script src="/js/english.js"></script>
 <script src="/js/french.js"></script>
 <script src="/js/modes.js"></script>

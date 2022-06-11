@@ -16,6 +16,8 @@ app.get('/', (req,res) =>{
 
 /*back side (nodemailer)*/
 app.post('/',(req,res) => { 
+
+
     try{
         
         const transporter = nodemailer.createTransport({

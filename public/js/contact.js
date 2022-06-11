@@ -21,21 +21,27 @@ const contact = {
 
         handleSubmit : (e) => {
             e.preventDefault();
-            fetch(contact.dataForm.server_url,{
-                method:"POST",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(
-                    {
-                    datas: {
-                        email: contact.dataForm.email.value,
-                        message: contact.dataForm.message.value                  
-                    }
+            grecaptcha.execute('6LfjGGAgAAAAAFLfWgXnrIWAros5eXRvZbgMEu14', {action: 'submit'}).then(function(token) { 
+
+                const captcha = token
+
+                fetch(contact.dataForm.server_url,{
+                    method:"POST",
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(
+                        {
+                            datas: {
+                                email: contact.dataForm.email.value,
+                                message: contact.dataForm.message.value,
+                                captcha: captcha               
+                            }
+                        }
+                        )
                     }
                 )
-            }
-            )
+            })
 
             .then(res => {
 
