@@ -182,8 +182,7 @@
     margin-top: 6vh;
     margin-bottom: 4vh;
     /*overflow for card-after animation*/
-    overflow: hidden;
-    transition: 1s;
+    overflow: hidden; 
 }
 .right{
     margin-left: 25%;
