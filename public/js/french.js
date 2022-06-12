@@ -17,7 +17,7 @@ const french = {
     pfF :  " Je suis un développeur de 33 ans, \
     aprés avoir passé 6 mois à apprendre le code en auto-didacte, \
     j'ai décidé de passer une formation de 6 mois spécialisée dans la techonolgie <strong>JavaScript</strong>  \
-    et le framework <strong>React</strong> ,avec l'organisme O'clock. Possibilité de voir le code. <br> \
+    et le framework <strong>React</strong> ,avec l'organisme O'clock. <br> \
     <br>\
     Cette formation se terminant le 02 juillet, je suis activement à la recherche d'une société pour continuer à évoluer et m'épanouir dans le développement web.</br>\
     <br>\
@@ -33,7 +33,7 @@ const french = {
     /*section4*/
     h2PF:"Mes projets:",
     cardOneF: "Entant que première pierre à l'édifice je tenais à réaliser ce site entierement en CSS & JS vanilla. Lors de cette réalisation, \
-    j'ai amélioré mon organisation et ma vision sur les échéances de travail.\
+    j'ai amélioré mon organisation et ma vision sur les échéances de travail. Possibilité de voir le code.\
     </br>\
     <span>Partie Front:</span> \
     L'interface IntersectionObserver est choisi afin de dynamiser de manière asynchrone le visionnage.Un mode englais et \

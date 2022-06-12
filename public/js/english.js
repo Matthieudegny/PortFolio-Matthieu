@@ -19,7 +19,7 @@ const english = {
     pf :  " I'm a 33 year old developer, \
     after spending 6 months learning the code on my own, \
     I have decided to take a 6-month training course specializing in <strong>JavaScript</strong> technology \
-    and the <strong>React</strong> framework, with the O'clock organization. Possibility to see the code <br>\
+    and the <strong>React</strong> framework, with the O'clock organization. <br>\
     <br>\
     This training ending on July 02, I am actively looking for a company to continue to evolve and flourish in web development.</br>\
     <br>\
@@ -35,7 +35,7 @@ const english = {
     /*section4*/
     h2P:"My projects:",
     cardOne: "As my first project, that was important for me, to realize this application 100% JS and CSS Vanilla. During the realiszation \
-    i improved my organisation and my work's vision.\
+    i improved my organisation and my work's vision. Possibility to see the code.\
     </br>\
     <span>Front part :</span>\
     The intersection Observer interface was selected to dynamize the user experience asynchronously. A dark mode and french mode were planed at \
