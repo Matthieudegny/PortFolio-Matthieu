@@ -72,8 +72,8 @@
     align-items: center;
     justify-content: center; 
     width: 100%;
-    color: rgb(252, 252, 252);
-    text-shadow: 2px 2px 12px rgb(2, 2, 2);
+    color: var(--main-text-color);
+    text-shadow: var(--main-text-shadow);
     font-weight: bolder;
 }
  #card-one-skills-back{
@@ -159,7 +159,6 @@
      justify-content: center;
      align-items: center;
      flex-wrap: wrap;
-     margin-right: 5%;
  }
  .item-addit{
    

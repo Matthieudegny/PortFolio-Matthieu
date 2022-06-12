@@ -25,7 +25,7 @@ const modes= {
             if(!modes.initialParameters.darkMode){
                 document.documentElement.style.setProperty('--main-mode-backgroundcolor', "url(/img/logo/backgroundColor/sun.png)")
                 document.documentElement.style.setProperty('--main-bg-color', "black")
-                document.documentElement.style.setProperty('--main-text-shadow', "0px 0px 15px white")
+                document.documentElement.style.setProperty('--main-text-shadow', "0px 0px 15px black")
                 document.documentElement.style.setProperty('--main-text-color', "white")
                 document.documentElement.style.setProperty('--main-containors', "rgb(40, 40, 38)")
                 document.documentElement.style.setProperty('--main-containors-footer', "rgb(11, 11, 11)")
@@ -33,7 +33,7 @@ const modes= {
             }else{
                 document.documentElement.style.setProperty('--main-mode-backgroundcolor', "url(/img/logo/backgroundColor/moon.png)")
                 document.documentElement.style.setProperty('--main-bg-color', "white")
-                document.documentElement.style.setProperty('--main-text-shadow', "0px 0px 15px black")
+                document.documentElement.style.setProperty('--main-text-shadow', "0px 0px 15px white")
                 document.documentElement.style.setProperty('--main-text-color', "black")
                 document.documentElement.style.setProperty('--main-containors', "rgb(147, 147, 141)")
                 document.documentElement.style.setProperty('--main-containors-footer', "rgb(177, 175, 175)")

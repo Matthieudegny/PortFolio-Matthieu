@@ -8,7 +8,7 @@ const contact = {
         email : document.querySelector(".contact-email"),
         message : document.querySelector(".contact-text"),
         emailState : document.getElementById("input-hidden"),
-        server_url : "https://localhost:3000"
+        server_url : "http://localhost:3000"
     },
 
 
