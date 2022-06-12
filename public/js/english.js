@@ -19,7 +19,7 @@ const english = {
     pf :  " I'm a 33 year old developer, \
     after spending 6 months learning the code on my own, \
     I have decided to take a 6-month training course specializing in <strong>JavaScript</strong> technology \
-    and the <strong>React</strong> framework, with the O'clock organization. <br>\
+    and the <strong>React</strong> framework, with the O'clock organization. Possibility to see the code <br>\
     <br>\
     This training ending on July 02, I am actively looking for a company to continue to evolve and flourish in web development.</br>\
     <br>\
