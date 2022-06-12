@@ -20,7 +20,7 @@ jobs:
         ssh_user: ${{ secrets.SSH_USER }}
         docker_compose_prefix: matthieu
         docker_compose_filename : docker-compose.yml
-        secrets:
-        "GMAIL_USER=${{ secrets.GMAIL_USER }}"
-        "PASSWORD=${{ secrets.PASSWORD }}"
-        "PORT=${{ secrets.PORT }}"
+        secrets: |
+          "GMAIL_USER=${{ secrets.GMAIL_USER }}"
+          "PASSWORD=${{ secrets.PASSWORD }}"
+          "PORT=${{ secrets.PORT }}"
